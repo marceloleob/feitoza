@@ -1,0 +1,163 @@
+
+/***
+====================================================================
+	Header Upper
+====================================================================
+***/
+
+.main-header .header-upper {
+	text-align: center;
+}
+
+.main-header .header-upper .upper-right {
+	position: relative;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.main-header .header-upper .upper-right .info-box {
+	float: none;
+	margin-left: 0px;
+	text-align: center;
+	padding: 0px;
+	border-right: 0px;
+}
+
+.main-header .header-upper .upper-right .info-box li {
+	line-height: 1.4em;
+}
+
+.main-header .header-upper .upper-right .info-box .icon-box {
+	position: relative;
+	top: 2px;
+	font-size: 40px;
+	text-align: center;
+}
+
+
+/***
+====================================================================
+	Welcome Section
+====================================================================
+***/
+
+.welcome-section {
+	position: relative;
+	padding: 40px 0px 40px;
+	background: none;
+}
+
+.welcome-section .content-column .sec-title {
+	text-align: center;
+}
+
+.welcome-section .content-column .inner-column .text {
+	position: relative;
+	color: #797979;
+	font-size: 16px;
+	line-height: 1.7em;
+	margin-bottom: 15px;
+	text-align: justify;
+	padding-left: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.welcome-section .content-column .inner-column .text .text-list {
+	position: relative;
+	margin-top: 15px;
+	text-align: left;
+	padding-right: 10px;
+	margin-left: 0px;
+	width: 100%;
+}
+
+.welcome-section .content-column .inner-column .number {
+	font-size: 19px;
+	font-weight: 400;
+	text-align: center;
+}
+
+.welcome-section .content-column .inner-column .number span {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+
+/***
+====================================================================
+	Offer Section
+====================================================================
+***/
+
+.offer-section {
+	position: relative;
+	padding: 40px 0px 20px;
+	background-color: #f4f4f5;
+}
+
+.offer-section .sec-title {
+	text-align: center;
+}
+
+
+/***
+====================================================================
+	Testimonial Section
+====================================================================
+***/
+
+.testimonial-section {
+	position: relative;
+	padding: 50px 0px;
+	background-color: #1e1e1f;
+}
+
+.testimonial-section .title-box {
+	position: relative;
+	text-align: center;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.testimonial-section .title-box:after {
+	display: none;
+}
+
+.testimonial-section .testimonial-block {
+	display: none;
+}
+
+.testimonial-section .footer-box {
+	position: relative;
+	text-align: center;
+	padding-top: 45px;
+}
+
+.testimonial-section .footer-box h2 a {
+	position: relative;
+	color: #9b9b9b;
+	font-size: 30px;
+	line-height: 1.4em;
+	color: #4180ff;
+}
+
+.testimonial-section .footer-box h2 a:hover {
+	color: #4180ff;
+}
+
+
+/***
+====================================================================
+	Sponsors Section
+====================================================================
+***/
+
+.sponsors-section {
+	position: relative;
+	padding: 40px 0px;
+	background-color: #efefef;
+}
+
+.sponsors-section .sponsors-outer .slide-item {
+	width: 45% !important;
+}

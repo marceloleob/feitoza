@@ -1,0 +1,95 @@
+
+/***
+====================================================================
+	Welcome Section
+====================================================================
+***/
+
+.aboutus-section {
+	position: relative;
+	padding: 50px 0px 30px;
+}
+
+.aboutus-section .content-column {
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.aboutus-section .content-column .inner-column {
+	position: relative;
+}
+
+.aboutus-section .content-column .sec-title {
+	margin-bottom: 12px;
+}
+
+.aboutus-section .content-column .inner-column .styled-text {
+	position: relative;
+	color: #242424;
+	font-size: 20px;
+	font-style: italic;
+	line-height: 1.6em;
+	margin-bottom: 20px;
+	font-family: 'Lora', serif;
+}
+
+.aboutus-section .content-column .inner-column .text {
+	position: relative;
+	color: #797979;
+	font-size: 16px;
+	line-height: 1.7em;
+	margin-top: 50px;
+	text-align: right;
+	padding-left: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.aboutus-section .content-column .inner-column .text p {
+	margin-bottom: 20px;
+}
+
+.aboutus-section .content-column .inner-column .number {
+	position: relative;
+	color: #20265a;
+	font-size: 25px;
+	font-weight: 500;
+	line-height: 1.9em;
+	text-align: right;
+}
+
+.aboutus-section .content-column .inner-column .number span {
+	display: block;
+	color: #f64e49;
+	font-size: 36px;
+	font-weight: 300;
+}
+
+.aboutus-section .image-column {
+	position: relative;
+}
+
+.aboutus-section .image-column .inner-column {
+	position: relative;
+	padding-left: 50px;
+}
+
+.aboutus-section .image-column .image {
+	position: relative;
+}
+
+.aboutus-section .image-column .image:before {
+	position: absolute;
+	content: '';
+	right: -20px;
+	top: -20px;
+	left: 20px;
+	bottom: 20px;
+	z-index: -1;
+	background-color: #2760ca;
+}
+
+.aboutus-section .image-column .image img {
+	position: relative;
+	width: 100%;
+	display: block;
+}

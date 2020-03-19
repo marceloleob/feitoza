@@ -1,0 +1,41 @@
+
+/***
+====================================================================
+	Main Menu
+====================================================================
+***/
+
+.main-menu {
+	float: left;
+	text-align: center;
+}
+
+
+/***
+====================================================================
+	Contact Info Section
+====================================================================
+***/
+
+.contact-info-section {
+	position: relative;
+	padding: 85px 0px 30px;
+}
+
+
+/***
+====================================================================
+	Contact Form Section
+====================================================================
+***/
+
+.contact-section {
+	position: relative;
+	overflow: hidden;
+	padding: 60px 0px 0px;
+	background-color: #f7f7f7;
+}
+
+.contact-section .image-column {
+	display: none;
+}

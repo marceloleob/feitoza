@@ -1,0 +1,77 @@
+
+/***
+====================================================================
+	Header Upper
+====================================================================
+***/
+
+.main-header .header-upper {
+	text-align: center;
+}
+
+.main-header .header-upper .upper-right {
+	position: relative;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.main-header .header-upper .upper-right .info-box {
+	float: none;
+	margin-left: 0px;
+	text-align: center;
+	padding: 0px;
+	border-right: 0px;
+}
+
+.main-header .header-upper .upper-right .info-box li {
+	line-height: 1.4em;
+}
+
+.main-header .header-upper .upper-right .info-box .icon-box {
+	position: relative;
+	top: 2px;
+	font-size: 40px;
+	text-align: center;
+}
+
+
+/***
+====================================================================
+	Sidebar Page Container
+====================================================================
+***/
+
+.sidebar-page-container {
+	position: relative;
+	padding: 45px 0px 20px;
+}
+
+.sidebar-page-container .content-side,
+.sidebar-page-container .sidebar-side {
+	margin-bottom: 5px;
+}
+
+
+/***
+====================================================================
+	Services Single Section
+====================================================================
+***/
+
+.services-single {
+	position: relative;
+	padding-left: 0px;
+}
+
+
+/***
+====================================================================
+	Gallery Not Found
+====================================================================
+***/
+
+.services-single .gallery-classic-section .gallery-not-found {
+	padding: 70px;
+	font-size: 21px;
+	text-align: center;
+}

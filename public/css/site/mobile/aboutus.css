@@ -1,0 +1,46 @@
+
+/***
+====================================================================
+	Main Menu (Correction)
+====================================================================
+***/
+
+.main-menu {
+	position: absolute;
+}
+
+/***
+====================================================================
+	Welcome Section
+====================================================================
+***/
+
+.aboutus-section {
+	position: relative;
+	padding: 45px 0px 20px;
+}
+
+.aboutus-section .content-column {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.aboutus-section .content-column .sec-title {
+	text-align: center;
+	margin-bottom: 12px;
+}
+
+.aboutus-section .content-column .inner-column .text {
+	position: relative;
+	color: #797979;
+	font-size: 16px;
+	line-height: 1.7em;
+    margin-top: 35px;
+    text-align: left;
+    padding-left: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.aboutus-section .image-column {
+	display: none;
+}
