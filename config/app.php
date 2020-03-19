@@ -54,6 +54,17 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application Asset URL
+    |--------------------------------------------------------------------------
+    |
+    | This URL is used by the console to properly generate URLs when using
+    | the Artisan command line tool. You should set this to the root of
+    | your application so that it is used when running Artisan tasks.
+    |
+    */
+
     'asset_url' => env('ASSET_URL', null),
 
     /*
@@ -67,7 +78,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/New_York',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +176,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Collective\Html\HtmlServiceProvider::class,
+        Waavi\Sanitizer\Laravel\SanitizerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -175,6 +188,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Customize Application Service Providers...
+         */
+        App\Providers\MacroServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
     ],
 
     /*
@@ -227,6 +245,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // external library
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Sanitizer' => Waavi\Sanitizer\Laravel\Facade::class,
     ],
 
 ];
