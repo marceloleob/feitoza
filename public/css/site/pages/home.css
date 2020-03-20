@@ -184,7 +184,8 @@
 
 .services-block-four .inner-box .image {
 	position: relative;
-	border-bottom: 3px solid #f64e49;
+    border-bottom: 3px solid #f64e49;
+    height: 281px;
 }
 
 .services-block-four .inner-box .image img {

@@ -8,6 +8,20 @@ $(document).ready(function ()
 	========================================================================== */
 	$(window).on('load', function () {
 
+		if ($('.owl-slider').length) {
+			var owl = $('.owl-slider');
+			owl.owlCarousel({
+                loop: true,
+                center: true,
+                items: 1,
+                margin: 30,
+                fluidSpeed: 450,
+                autoplay: true,
+				autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+			});
+		}
+
 		if ($('.owl-testimonials').length) {
 			var owl = $('.owl-testimonials');
 			owl.owlCarousel({

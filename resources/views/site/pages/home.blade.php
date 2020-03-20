@@ -9,7 +9,10 @@
 				<div class="elm col-sm-12 column col-sm-12">
 					<div class="col-container">
 						<section class="main-slider">
-							<img src="{!! asset('images/slider/03.jpg') !!}"  alt="" title=""  width="1920" height="653" />
+                            <div class="owl-slider owl-carousel owl-theme owl-loaded owl-drag">
+                                <img src="{!! asset('images/slider/01.jpg') !!}"  alt="" title=""  width="1920" height="653" />
+                                <img src="{!! asset('images/slider/02.jpg') !!}"  alt="" title=""  width="1920" height="653" />
+                            </div>
 						</section>
 					</div>
 				</div>
@@ -81,7 +84,62 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('') !!}" alt="" width="370" height="278" />
+													<img src="{!! asset('images/services/02.jpg') !!}" alt="" width="370" height="278" />
+													<div class="overlay-box">
+														<a href="#" class="theme-btn detail-btn">View Details</a>
+													</div>
+												</div>
+												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
+											</div>
+										</div>
+										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
+											<div class="inner-box">
+												<div class="image">
+													<img src="{!! asset('images/services/09.jpg') !!}" alt="" width="370" height="278" />
+													<div class="overlay-box">
+														<a href="#" class="theme-btn detail-btn">View Details</a>
+													</div>
+												</div>
+												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
+											</div>
+										</div>
+										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
+											<div class="inner-box">
+												<div class="image">
+													<img src="{!! asset('images/services/04.jpg') !!}" alt="" width="370" height="278" />
+													<div class="overlay-box">
+														<a href="#" class="theme-btn detail-btn">View Details</a>
+													</div>
+												</div>
+												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
+											</div>
+										</div>
+										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
+											<div class="inner-box">
+												<div class="image">
+													<img src="{!! asset('images/services/08.jpg') !!}" alt="" width="370" height="278" />
+													<div class="overlay-box">
+														<a href="#" class="theme-btn detail-btn">View Details</a>
+													</div>
+												</div>
+												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
+											</div>
+										</div>
+										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
+											<div class="inner-box">
+												<div class="image">
+													<img src="{!! asset('images/services/06.jpg') !!}" alt="" width="370" height="278" />
+													<div class="overlay-box">
+														<a href="#" class="theme-btn detail-btn">View Details</a>
+													</div>
+												</div>
+												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
+											</div>
+										</div>
+										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
+											<div class="inner-box">
+												<div class="image">
+													<img src="{!! asset('images/services/07.jpg') !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="#" class="theme-btn detail-btn">View Details</a>
 													</div>
@@ -129,8 +187,39 @@
 																<div class="left-box">
 																	<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
 																</div>
-																<h3>Name</h3>
-																<div class="text">Descricao</div>
+																<h3>Marcelo Leopold</h3>
+																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
+                                                                quam id dui posuere blandit.,</div>
+																<div class="readmore"><a href="#">read more</a></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="owl-item">
+													<div class="testimonial-block">
+														<div class="inner-box">
+															<div class="content">
+																<div class="left-box">
+																	<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
+																</div>
+																<h3>Paulo Feitoza</h3>
+																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
+                                                                quam id dui posuere blandit.,</div>
+																<div class="readmore"><a href="#">read more</a></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="owl-item">
+													<div class="testimonial-block">
+														<div class="inner-box">
+															<div class="content">
+																<div class="left-box">
+																	<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
+																</div>
+																<h3>Fulano Silva</h3>
+																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
+                                                                quam id dui posuere blandit.,</div>
 																<div class="readmore"><a href="#">read more</a></div>
 															</div>
 														</div>
