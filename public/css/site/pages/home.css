@@ -65,8 +65,7 @@
 
 .welcome-section {
 	position: relative;
-    padding: 95px 0px 0px;
-	background: url(../../../images/background/paint-splash.png);
+    padding: 95px 0px 60px;
 	background-position: left bottom !important;
     background-repeat: no-repeat !important;
 }

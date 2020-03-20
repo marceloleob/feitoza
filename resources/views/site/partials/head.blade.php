@@ -26,10 +26,9 @@
 	{!! Html::style('css/reset.css') !!}
     {{-- CSS LIBS --}}
 	{!! Html::style('css/libs/bootstrap.min.css') !!}
-	{!! Html::style('vendor/fontawesome-free/css/fontawesome.min.css') !!}
-	{!! Html::style('vendor/fontawesome-free/css/brands.min.css') !!}
-	{!! Html::style('vendor/fontawesome-free/css/solid.min.css') !!}
+	{!! Html::style('vendor/fontawesome-free/css/all.min.css') !!}
 	{!! Html::style('vendor/flaticon/all.css') !!}
+	{!! Html::style('vendor/owl-carousel/dist/assets/owl.carousel.min.css') !!}
 	{{-- Google APIs - Fonts --}}
 	{!! Html::style('vendor/font/google-latin-ext.css') !!}
     {{-- CSS CUSTOM --}}

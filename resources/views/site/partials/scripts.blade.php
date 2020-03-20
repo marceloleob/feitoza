@@ -3,6 +3,7 @@
 {{-- JS LIBS / JQUERY --}}
 {!! Html::script('vendor/jquery/jquery.min.js', ['defer' => 'defer']) !!}
 {!! Html::script('vendor/bootstrap/js/bootstrap.min.js', ['defer' => 'defer']) !!}
+{!! Html::script('vendor/owl-carousel/dist/owl.carousel.min.js', ['defer' => 'defer']) !!}
 
 {{-- {!! Html::script('js/libs/jquery.easing.min.js', ['defer' => 'defer']) !!} --}}
 {{-- {!! Html::script('js/libs/owl.carousel.min.js', ['defer' => 'defer']) !!} --}}
@@ -17,5 +18,5 @@
 {!! Html::script('js/libs/jquery.mousewheel.min.js', ['defer' => 'defer']) !!} --}}
 
 {{-- JS CUSTOM --}}
+{!! Html::script('js/site/main.js', ['defer' => 'defer']) !!}
 @yield('js-custom')
-{{-- {!! Html::script('js/site/script.js', ['defer' => 'defer']) !!} --}}

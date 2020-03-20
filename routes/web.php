@@ -34,7 +34,7 @@ Route::group(['namespace' => 'Site'], function () {
     // Testimonials
     Route::get('testimonials', 'TestimonialController@index')->name('testimonial');
     // Contact Us
-    Route::get('contact-us', 'ContactController@index')->name('contact-us');
+    Route::get('contact-us', 'ContactController@index')->name('contact');
     Route::post('send', 'ContactController@send')->name('send-mail');
 });
 
