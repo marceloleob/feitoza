@@ -42,7 +42,7 @@
 			<div class="widgets-inner-container">
 				{{-- Cartoon Image --}}
 				<div class="cartoon-image">
-					<img src="{!! asset('images/background/mascot.png') !!}" alt="" width="195" />
+					<img src="{!! asset('images/background/mascot.png') !!}" alt="" width="200" />
 				</div>
 				<div class="row clearfix">
 					<div class="footer-column col-md-9 col-sm-5 col-xs-12">
@@ -60,14 +60,14 @@
 							<h2>Quick Links</h2>
 							<ul class="list">
 								<li><a href="{!! route('home') !!}">Home</a></li>
-								<li><a href="{!! route('about') !!}">About Us</a></li>
 								<li><a href="#">Image Gallery</a></li>
 								<li><a href="{!! route('testimonial') !!}">Testimonials</a></li>
+								<li><a href="{!! route('about') !!}">About Us</a></li>
 								<li><a href="{!! route('contact') !!}">Contact Us</a></li>
                             </ul>
                             <ul class="social-icon">
-                                <li><a href="https://www.facebook.com/bestwayimprovements/" target="_blank" title="Facebook"><i class="fab fa-facebook-f fa-sm"></i></a></li>
-                                <li><a href="https://www.instagram.com/bestwayimprovements/" target="_blank" title="Instagram"><i class="fab fa-instagram fa-sm"></i></a></li>
+                                <li><a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f fa-sm"></i></a></li>
+                                <li><a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram fa-sm"></i></a></li>
                             </ul>
 						</div>
 					</div>

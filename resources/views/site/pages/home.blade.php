@@ -1,5 +1,9 @@
 @extends('site.layouts.home')
 
+@section('css-custom')
+{!! Html::style('css/site/pages/home.css') !!}
+@stop
+
 @section('content')
 
 	{{-- Slide Section --}}
@@ -185,7 +189,7 @@
 														<div class="inner-box">
 															<div class="content">
 																<div class="left-box">
-																	<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
+																	<div class="quote-icon"><i class="icon fas fa-quote-left"></i></div>
 																</div>
 																<h3>Marcelo Leopold</h3>
 																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
@@ -200,7 +204,7 @@
 														<div class="inner-box">
 															<div class="content">
 																<div class="left-box">
-																	<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
+																	<div class="quote-icon"><i class="icon fas fa-quote-left"></i></div>
 																</div>
 																<h3>Paulo Feitoza</h3>
 																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
@@ -215,7 +219,7 @@
 														<div class="inner-box">
 															<div class="content">
 																<div class="left-box">
-																	<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
+																	<div class="quote-icon"><i class="icon fas fa-quote-left"></i></div>
 																</div>
 																<h3>Fulano Silva</h3>
 																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet

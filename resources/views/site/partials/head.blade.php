@@ -33,6 +33,5 @@
 	{!! Html::style('vendor/font/google-latin-ext.css') !!}
     {{-- CSS CUSTOM --}}
 	{!! Html::style('css/site/main.css') !!}
-	{!! Html::style('css/site/pages/home.css') !!}
-
+    @yield('css-custom')
 </head>
