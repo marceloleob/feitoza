@@ -14,6 +14,6 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('site.pages.contact');
+        return view('site.pages.contact')->with(['current' => 'contact']);
     }
 }

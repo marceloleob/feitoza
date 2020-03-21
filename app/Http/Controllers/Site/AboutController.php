@@ -14,6 +14,6 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('site.pages.about');
+        return view('site.pages.about')->with(['current' => 'about']);
     }
 }

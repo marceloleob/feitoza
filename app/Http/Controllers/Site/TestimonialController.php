@@ -14,6 +14,6 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        return view('site.pages.testimonial');
+        return view('site.pages.testimonial')->with(['current' => 'testimonial']);
     }
 }
