@@ -29,13 +29,15 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'Site'], function () {
     // Home
     Route::get('/', 'HomeController@index')->name('home');
-    // About Us
-    Route::get('about-us', 'AboutController@index')->name('about');
+    // Gallery
+    Route::get('gallery', 'GalleryController@index')->name('gallery');
     // Testimonials
     Route::get('testimonials', 'TestimonialController@index')->name('testimonial');
+    // About Us
+    Route::get('about-us', 'AboutController@index')->name('about');
     // Contact Us
     Route::get('contact-us', 'ContactController@index')->name('contact');
-    Route::post('send', 'ContactController@send')->name('send-mail');
+    Route::post('send', 'ContactController@index')->name('send');
 });
 
 /**

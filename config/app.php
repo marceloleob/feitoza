@@ -184,14 +184,10 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        /*
-         * Customize Application Service Providers...
-         */
-        App\Providers\MacroServiceProvider::class,
+        // Customize Application Service Providers...
+        App\Providers\FormServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
     ],
 

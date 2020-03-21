@@ -88,7 +88,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('images/services/02.jpg') !!}" alt="" width="370" height="278" />
+													<img src="{!! asset('images/gallery/02.jpg') !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="#" class="theme-btn detail-btn">View Details</a>
 													</div>
@@ -99,7 +99,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('images/services/09.jpg') !!}" alt="" width="370" height="278" />
+													<img src="{!! asset('images/gallery/09.jpg') !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="#" class="theme-btn detail-btn">View Details</a>
 													</div>
@@ -110,7 +110,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('images/services/04.jpg') !!}" alt="" width="370" height="278" />
+													<img src="{!! asset('images/gallery/04.jpg') !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="#" class="theme-btn detail-btn">View Details</a>
 													</div>
@@ -121,7 +121,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('images/services/08.jpg') !!}" alt="" width="370" height="278" />
+													<img src="{!! asset('images/gallery/08.jpg') !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="#" class="theme-btn detail-btn">View Details</a>
 													</div>
@@ -132,7 +132,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('images/services/06.jpg') !!}" alt="" width="370" height="278" />
+													<img src="{!! asset('images/gallery/06.jpg') !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="#" class="theme-btn detail-btn">View Details</a>
 													</div>
@@ -143,7 +143,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('images/services/07.jpg') !!}" alt="" width="370" height="278" />
+													<img src="{!! asset('images/gallery/07.jpg') !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="#" class="theme-btn detail-btn">View Details</a>
 													</div>

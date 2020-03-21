@@ -1,0 +1,104 @@
+
+/***
+====================================================================
+	Filter Gallery Classic Section
+====================================================================
+***/
+
+.gallery-classic-section {
+	position:relative;
+	padding:90px 0px 70px;
+}
+
+.gallery-classic-section .filters {
+	position:relative;
+	margin-bottom:40px;
+	text-align:center;
+}
+
+.gallery-classic-section .filters .filter-tabs {
+	position:relative;
+}
+
+.gallery-classic-section .filters li {
+	position: relative;
+    display: inline-block;
+    color: #242424;
+	padding:0px 0px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+	margin-right:30px;
+	margin-bottom:10px;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+	font-family: 'Poppins', sans-serif;
+}
+
+.gallery-classic-section .filters .filter.mixitup-control-active,
+.gallery-classic-section .filters .filter:hover {
+    color: #2760ca;
+	text-decoration: underline;
+}
+
+/***
+====================================================================
+	Gallery Classic Section
+====================================================================
+***/
+
+.gallery-list {
+    padding: 1rem;
+    text-align: justify;
+    font-size: 0.1px;
+}
+
+.gallery-list:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.gallery-list .gallery-item {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.gallery-list .gallery-item .inner-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-list .gallery-item .image-box {
+    position: relative;
+    display: block;
+}
+
+.gallery-list .gallery-item .inner-box {
+    position: relative;
+    overflow: hidden;
+    height: 248px;
+    background-color: #d2d6de;
+}
+
+.gallery-list .gallery-item .image-box {
+    position: relative;
+    display: block;
+}
+
+.gallery-list .gallery-item .image-box img {
+    position: relative;
+    display: block;
+}
+
+.gallery-list .gallery-item .image-box img.v-picture {
+    max-height: 248px;
+}
+
+.gallery-list .gallery-item .image-box img.h-picture {
+    max-width: 328px;
+}
