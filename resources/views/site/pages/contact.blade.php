@@ -11,7 +11,7 @@
 	<section class="row">
 		<div class="row-container container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
 						{{-- Contact Info Section --}}
 						<section class="contact-info-section">
@@ -47,10 +47,10 @@
 		</div>
 	</section>
 
-	<section class="elm row">
+	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
 						{{-- Appointment Section --}}
 						<section class="contact-section">
@@ -63,7 +63,7 @@
 											<div class="default-form">
 												<div class="row clearfix">
 													<div class="error-message">
-														{{-- {!! Form::boxNotification($errors) !!} --}}
+														{!! Form::boxNotification($errors) !!}
 													</div>
 												</div>
 												<div class="screen-reader-response"></div>
@@ -72,37 +72,37 @@
 														<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 															<span class="form-control-wrap">
 																{!! Form::text('firstname', '', ['class' => 'form-control text', 'placeholder' => 'First name']) !!}
-																{{-- {!! Form::notification('firstname', $errors) !!} --}}
+																{!! Form::notification('firstname', $errors) !!}
 															</span>
 														</div>
 														<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 															<span class="form-control-wrap">
 																{!! Form::text('lastname', '', ['class' => 'form-control text', 'placeholder' => 'Last name']) !!}
-																{{-- {!! Form::notification('lastname', $errors) !!} --}}
+																{!! Form::notification('lastname', $errors) !!}
 															</span>
 														</div>
 														<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 															<span class="form-control-wrap">
-																{!! Form::email('email', '', ['class' => 'form-control email', 'placeholder' => 'Email']) !!}
-																{{-- {!! Form::notification('email', $errors) !!} --}}
+																{!! Form::email('email', '', ['class' => 'form-control email', 'placeholder' => 'E-mail']) !!}
+																{!! Form::notification('email', $errors) !!}
 															</span>
 														</div>
 														<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 															<span class="form-control-wrap">
 																{!! Form::text('phone', '', ['class' => 'form-control text phone phoneOnly', 'placeholder' => 'Phone number']) !!}
-																{{-- {!! Form::notification('phone', $errors) !!} --}}
+																{!! Form::notification('phone', $errors) !!}
 															</span>
 														</div>
 														<div class="col-md-12 col-sm-12 col-xs-12 form-group">
 															<span class="form-control-wrap">
 																{!! Form::text('subject', '', ['class' => 'form-control text', 'placeholder' => 'Subject']) !!}
-																{{-- {!! Form::notification('subject', $errors) !!} --}}
+																{!! Form::notification('subject', $errors) !!}
 															</span>
 														</div>
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
 															<span class="form-control-wrap">
 																{!! Form::textarea('text', '', ['class' => 'form-control textarea', 'placeholder' => 'Message']) !!}
-																{{-- {!! Form::notification('text', $errors) !!} --}}
+																{!! Form::notification('text', $errors) !!}
 															</span>
 														</div>
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">

@@ -187,7 +187,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         // Customize Application Service Providers...
-        App\Providers\FormServiceProvider::class,
+        App\Providers\MacroServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
     ],
 

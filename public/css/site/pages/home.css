@@ -142,9 +142,9 @@
 .welcome-section .image-column .image:before {
     position: absolute;
     content: '';
-    right: -20px;
+    right: -7px;
     top: -20px;
-    left: 20px;
+    left: 30px;
     bottom: 20px;
     z-index: -1;
     background-color: #2760ca;

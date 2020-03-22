@@ -17,7 +17,7 @@
 				<div class="upper-column info-box">
 					<div class="icon-box"><span class="flaticon-location-pin"></span></div>
 					<ul>
-						<li>Service Location: <br /> New England</li>
+						<li>New England <br /> Rhode Island <br /> Connecticut</li>
 					</ul>
 				</div>
 				{{-- Info Box --}}

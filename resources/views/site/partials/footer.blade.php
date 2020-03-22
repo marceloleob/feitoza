@@ -66,8 +66,9 @@
 								<li><a href="{!! route('contact') !!}">Contact Us</a></li>
                             </ul>
                             <ul class="social-icon">
-                                <li><a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f fa-sm"></i></a></li>
+                                <li><a href="https://www.facebook.com/feitoza.wallpaper" target="_blank" title="Facebook"><i class="fab fa-facebook-f fa-sm"></i></a></li>
                                 <li><a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram fa-sm"></i></a></li>
+                                <li><a href="https://wa.me/17813668429" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp fa-sm"></i></a></li>
                             </ul>
 						</div>
 					</div>

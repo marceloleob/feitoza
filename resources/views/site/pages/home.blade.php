@@ -7,10 +7,10 @@
 @section('content')
 
 	{{-- Slide Section --}}
-	<section class="elm row">
+	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
 						<section class="main-slider">
                             <div class="owl-slider owl-carousel owl-theme owl-loaded owl-drag">
@@ -26,12 +26,11 @@
 	{{-- End Slide Section --}}
 
 	{{-- Welcome Section --}}
-	<section class="elm row">
+	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
-
 						<section class="welcome-section">
 							<div class="auto-container">
 								<div class="row clearfix">
@@ -61,7 +60,6 @@
 								</div>
 							</div>
 						</section>
-						{{-- End Welcome Section --}}
 					</div>
 				</div>
 			</div>
@@ -70,10 +68,10 @@
 	{{-- End Welcome Section --}}
 
 	{{-- Offer Section --}}
-	<section class="elm row">
+	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
 						{{-- Offer Section --}}
 						<section class="offer-section">
@@ -166,10 +164,10 @@
 
 	{{-- Testimonial Section --}}
 	{{-- @if (count($testimonials)) --}}
-	<section class="elm row">
+	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
 						{{-- Testimonial Section --}}
 						<section class="testimonial-section">
@@ -250,10 +248,10 @@
 	{{-- End Testimonial Section --}}
 
 	{{-- Sponsors Section --}}
-	<section class="elm row">
+	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
 						{{-- Sponsors Section --}}
 						<section class="sponsors-section">
@@ -264,7 +262,7 @@
 										<li class="slide-item"><figure class="image-box"><a href="#" target="_blank"><img src="{!! asset('images/badge/angies.png') !!}" alt=""></a></figure></li>
 										<li class="slide-item"><figure class="image-box"><a href="#" target="_blank"><img src="{!! asset('images/badge/elite-service.png') !!}" alt=""></a></figure></li>
 										<li class="slide-item"><figure class="image-box"><a href="#" target="_blank"><img src="{!! asset('images/badge/us-green.png') !!}" alt=""></a></figure></li>
-										<li class="slide-item"><figure class="image-box"><a href="#" target="_blank"><img src="{!! asset('images/badge/thumbtack.png') !!}" alt=""></a></figure></li>
+										<li class="slide-item"><figure class="image-box"><a href="https://www.thumbtack.com/ma/chelsea/wallpaper-installation/feitoza-wallpaper-decor/service/334104293840552180" target="_blank"><img src="{!! asset('images/badge/thumbtack.png') !!}" alt=""></a></figure></li>
 										<li class="slide-item"><figure class="image-box"><a href="#" target="_blank"><img src="{!! asset('images/badge/yelp.png') !!}" alt=""></a></figure></li>
 									</ul>
 									{{-- End Sponsors Carousel --}}

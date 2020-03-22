@@ -11,7 +11,7 @@
 	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
-				<div class="elm col-sm-12 column col-sm-12">
+				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
 						{{-- Welcome Section --}}
 						<section class="aboutus-section">
