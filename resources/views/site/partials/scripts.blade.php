@@ -1,5 +1,4 @@
 
-
 {{-- JS LIBS / JQUERY --}}
 {!! Html::script('vendor/jquery/jquery.min.js', ['defer' => 'defer']) !!}
 {!! Html::script('vendor/bootstrap/js/bootstrap.min.js', ['defer' => 'defer']) !!}

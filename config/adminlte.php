@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title'        => 'Feitoza Wallpaper Decor',
-    'title_prefix'  => '',
+    'title' => 'AdminLTE 3',
+    'title_prefix' => '',
     'title_postfix' => '',
 
     /*
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only'     => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo'              => '<b>Feitoza</b>WD',
-    'logo_img'          => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class'    => 'brand-image img-circle elevation-3',
-    'logo_img_xl'       => null,
+    'logo' => '<b>Feitoza</b> Wallpaper Decor',
+    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt'      => 'AdminLTE',
+    'logo_img_alt' => 'AdminLTE',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,11 +64,11 @@ return [
     |
     */
 
-    'usermenu_enabled'      => true,
-    'usermenu_header'       => false,
+    'usermenu_enabled' => true,
+    'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image'        => false,
-    'usermenu_desc'         => false,
+    'usermenu_image' => false,
+    'usermenu_desc' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -82,11 +82,11 @@ return [
     |
     */
 
-    'layout_topnav'       => null,
-    'layout_boxed'        => null,
+    'layout_topnav' => null,
+    'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar'  => null,
-    'layout_fixed_footer'  => null,
+    'layout_fixed_navbar' => null,
+    'layout_fixed_footer' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -100,7 +100,7 @@ return [
     |
     */
 
-    'classes_body' => '',
+    'classes_body' => 'skin-blue sidebar-mini',
     'classes_brand' => '',
     'classes_brand_text' => '',
     'classes_content_header' => 'container-fluid',

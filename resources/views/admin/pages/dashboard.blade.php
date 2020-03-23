@@ -1,11 +1,8 @@
 @extends('admin.layouts.main')
 
-@section('title-page-lg', Lang::get('messages.welcome.admin.title'))
-
-@section('title-page-sm', '')
+@section('title', 'Dashboard')
 
 @section('css-custom')
-    {{-- CUSTOM PAGES --}}
     {!! Html::style('css/admin/pages/dashboard.css') !!}
 @stop
 
@@ -14,7 +11,7 @@
     <div class="row clearfix">
         <div class="welcome-box">
             <div class="welcome-text">
-                <h1>{!! Lang::get('messages.welcome.admin') !!}</h1>
+                <h1>Aqui ficam as coisas da Dashboard</h1>
             </div>
         </div>
     </div>
