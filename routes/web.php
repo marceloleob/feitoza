@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,3 +76,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('testimonial', 'TestimonialsController@store')->name('testimonial.store');
     Route::get('testimonial/delete/{id?}', 'TestimonialsController@destroy')->name('testimonial.destroy');
 });
+
+/**
+ * Rotas de Autenticacao
+ */
+Auth::routes(
+    [
+        'register' => false,
+    ]
+);

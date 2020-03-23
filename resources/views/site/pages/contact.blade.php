@@ -106,7 +106,7 @@
 															</span>
 														</div>
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-															{!! Form::button('<i class="far fa-paper-plane"></i> Send', ['type' => 'submit', 'class' => 'submit theme-btn btn-style']) !!}
+															{!! Form::button('<i class="far fa-paper-plane"></i> Send', ['type' => 'submit', 'class' => 'theme-btn btn-style']) !!}
 														</div>
 													</div>
 													<div class="response-output display-none"></div>

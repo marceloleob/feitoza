@@ -1,74 +1,28 @@
 @extends('auth.layouts.main')
 
-@section('adminlte_css')
-    <link rel="stylesheet" href="{!! asset('vendor/adminlte/plugins/iCheck/square/blue.css') !!}">
-    <link rel="stylesheet" href="{!! asset('css/auth/login.css') !!}">
-    @yield('css')
-@stop
-
-@section('body_class', 'login-page')
-
 @section('body')
     <div class="login-box">
         <div class="login-logo">
             <a href="{!! url(config('adminlte.dashboard_url', 'home')) !!}" target="_blank">
-                <img src="{!! asset('images/logo.png') !!}" class="logo" alt="{!! Config::get('app.name') !!}" title="{!! Config::get('app.name') !!}">
+                <img src="{!! asset('images/logo.png') !!}" class="logo" alt="{!! Config::get('app.name') !!}" title="{!! Config::get('app.name') !!}" />
             </a>
         </div>
         <div class="login-box-body">
             <p class="login-box-msg">{!! trans('adminlte::adminlte.login_message') !!}</p>
-            <form action="{!! url(config('adminlte.login_url', 'login')) !!}" method="post">
-                <div class="form-group has-feedback {!! $errors->has('email') ? 'has-error' : '' !!}">
-                    <input type="email" name="email" class="form-control" value="{!! old('email') !!}" placeholder="{!! trans('adminlte::adminlte.email') !!}">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{!! $errors->first('email') !!}</strong>
-                        </span>
-                    @endif
+            {!! Form::open(['id' => 'contact-form', 'route' => 'login', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
+                <div class="form-group">
+                    {!! Form::email('email', old('email'), ['class' => 'form-control email', 'placeholder' => 'E-mail']) !!}
+                    {!! Form::notification('email', $errors) !!}
                 </div>
-                <div class="form-group has-feedback {!! $errors->has('password') ? 'has-error' : '' !!}">
-                    <input type="password" name="password" class="form-control" placeholder="{!! trans('adminlte::adminlte.password') !!}">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-                            <strong>{!! $errors->first('password') !!}</strong>
-                        </span>
-                    @endif
+                <div class="form-group">
+                    {!! Form::text('password', '', ['class' => 'form-control text', 'placeholder' => 'Password']) !!}
+                    {!! Form::notification('password', $errors) !!}
                 </div>
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                {{-- <input type="checkbox" name="remember"> &nbsp; {!! trans('adminlte::adminlte.remember_me') !!} --}}
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-xs-4">
-                        {!! csrf_field() !!}
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">{!! trans('adminlte::adminlte.sign_in') !!}</button>
-                    </div>
+                <div class="form-group">
+                    @csrf
+                    {!! Form::button('<i class="fas fa-sign-in-alt"></i> Sign In', ['type' => 'submit', 'class' => 'btn btn-primary btn-block btn-flat']) !!}
                 </div>
-            </form>
-            {{--
-            <div class="auth-links">
-                <a href="{!! url(config('adminlte.reset_psw_url', 'reset-password')) !!}" class="text-center">{!! trans('adminlte::adminlte.i_forgot_my_password') !!}</a>
-            </div>
-            --}}
+            {!! Form::close() !!}
         </div>
     </div>
-@stop
-
-@section('adminlte_js')
-    <script src="{!! asset('vendor/adminlte/plugins/iCheck/icheck.min.js') !!}"></script>
-    <script>
-        $(function () {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
-            });
-        });
-    </script>
-    @yield('js')
 @stop

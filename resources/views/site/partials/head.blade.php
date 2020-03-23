@@ -32,6 +32,7 @@
 	{{-- Google APIs - Fonts --}}
 	{!! Html::style('vendor/font/google-latin-ext.css') !!}
     {{-- CSS CUSTOM --}}
-	{!! Html::style('css/site/main.css') !!}
+    {!! Html::style('css/site/main.css') !!}
+    {!! Html::style('css/forms.css') !!}
     @yield('css-custom')
 </head>
