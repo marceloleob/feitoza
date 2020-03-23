@@ -286,24 +286,24 @@
 
 /***
 ====================================================================
-	Testimonial Section
+	Reviews Section
 ====================================================================
 ***/
 
-.testimonial-section {
+.review-section {
 	position: relative;
 	padding: 65px 0px;
 	background-color: #1e1e1f;
 }
 
-.testimonial-section .title-box {
+.review-section .title-box {
 	position: relative;
 	text-align: center;
 	padding-bottom: 20px;
 	margin-bottom: 50px;
 }
 
-.testimonial-section .title-box h2 {
+.review-section .title-box h2 {
 	position: relative;
 	color: #ffffff;
 	font-size: 32px;
@@ -312,14 +312,14 @@
 	margin-bottom: 5px;
 }
 
-.testimonial-section .title-box .title {
+.review-section .title-box .title {
 	position: relative;
 	color: #797979;
 	font-size: 20px;
 	font-family: 'Open Sans', sans-serif;
 }
 
-.testimonial-section .title-box:after {
+.review-section .title-box:after {
 	position: absolute;
 	content: '';
 	left: 50%;
@@ -330,29 +330,29 @@
 	background-color: #2760ca;
 }
 
-.testimonial-section .testimonial-block {
+.review-section .review-block {
 	position: relative;
 }
 
-.testimonial-section .testimonial-block .inner-box {
+.review-section .review-block .inner-box {
 	background-color: #1a1a1a;
 	border: 1px solid #262626;
 	box-shadow: none;
 }
 
-.testimonial-section .testimonial-block .inner-box .content {
+.review-section .review-block .inner-box .content {
 	position: relative;
 	padding: 15px 25px 20px 105px;
 	height: 184px;
 }
 
-.testimonial-section .testimonial-block .inner-box .content .left-box {
+.review-section .review-block .inner-box .content .left-box {
 	position: absolute;
 	left: 0px;
 	top: 0px;
 }
 
-.testimonial-section .testimonial-block .inner-box .content .left-box .quote-icon {
+.review-section .review-block .inner-box .content .left-box .quote-icon {
 	position: relative;
 	color: #2760ca;
 	font-size: 65px;
@@ -360,7 +360,7 @@
 	margin: 15px 22px;
 }
 
-.testimonial-section .testimonial-block .inner-box .content h3 {
+.review-section .review-block .inner-box .content h3 {
 	position: relative;
 	color: #2760ca;
 	font-size: 20px;
@@ -369,7 +369,7 @@
 	line-height: 1.2em;
 }
 
-.testimonial-section .testimonial-block .inner-box .content .text {
+.review-section .review-block .inner-box .content .text {
 	position: relative;
 	color: #797979;
 	font-size: 17px;
@@ -379,39 +379,39 @@
 	max-height: 91px;
 }
 
-.testimonial-section .testimonial-block .inner-box .content .readmore {
+.review-section .review-block .inner-box .content .readmore {
 	position: absolute;
 	bottom: 15px;
 	right: 25px;
 }
 
-.testimonial-section .testimonial-block .inner-box .content .readmore a {
+.review-section .review-block .inner-box .content .readmore a {
 	color: #ffffff;
 }
 
-.testimonial-section .testimonial-block .inner-box .content .readmore a:hover {
+.review-section .review-block .inner-box .content .readmore a:hover {
 	color: #f64e49;
 }
 
-.testimonial-section .owl-dots,
-.testimonial-section .owl-nav {
+.review-section .owl-dots,
+.review-section .owl-nav {
 	display: none;
 }
 
-.testimonial-section .footer-box {
+.review-section .footer-box {
 	position: relative;
 	text-align: center;
 	padding-top: 45px;
 }
 
-.testimonial-section .footer-box h2 a {
+.review-section .footer-box h2 a {
 	position: relative;
 	color: #9b9b9b;
 	font-size: 25px;
 	line-height: 1.4em;
 }
 
-.testimonial-section .footer-box h2 a:hover {
+.review-section .footer-box h2 a:hover {
 	color: #4180ff;
 }
 

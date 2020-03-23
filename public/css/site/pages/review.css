@@ -2,21 +2,21 @@
 
 /***
 ====================================================================
-	Testimonial Page Section
+	Reviews Page Section
 ====================================================================
 ***/
 
-.testimonial-page-section {
+.review-page-section {
 	position: relative;
 	padding: 110px 0px 30px;
 	background-color: #f0f0f0;
 }
 
-.testimonial-page-section .sec-title {
+.review-page-section .sec-title {
 	margin-bottom: 30px;
 }
 
-.testimonial-page-section .styled-text {
+.review-page-section .styled-text {
 	position: relative;
 	color: #242424;
 	font-size: 20px;
@@ -25,18 +25,18 @@
 	font-family: 'Lora', serif;
 }
 
-.testimonial-page-section .no-testimonial {
+.review-page-section .no-review {
 	text-align: center;
 	font-size: 20px;
 	padding: 10px 0 65px;
 }
 
-.testimonial-page-section .testimonial-block {
+.review-page-section .review-block {
 	position: relative;
 	margin-bottom: 45px;
 }
 
-.testimonial-page-section .testimonial-block .inner-box {
+.review-page-section .review-block .inner-box {
 	position: relative;
 	padding: 45px 30px;
 	border-radius: 5px;
@@ -46,18 +46,18 @@
 	box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
 }
 
-.testimonial-page-section .testimonial-block .inner-box .content {
+.review-page-section .review-block .inner-box .content {
 	position: relative;
 	padding: 15px 25px 20px 105px;
 }
 
-.testimonial-page-section .testimonial-block .inner-box .content .left-box {
+.review-page-section .review-block .inner-box .content .left-box {
 	position: absolute;
 	left: 0px;
 	top: 0px;
 }
 
-.testimonial-page-section .testimonial-block .inner-box .content .left-box .quote-icon {
+.review-page-section .review-block .inner-box .content .left-box .quote-icon {
 	position: relative;
 	color: #2760ca;
 	font-size: 65px;
@@ -65,7 +65,7 @@
 	margin: 15px 22px;
 }
 
-.testimonial-page-section .testimonial-block .inner-box .content h3 {
+.review-page-section .review-block .inner-box .content h3 {
     position: relative;
     color: #222328;
     font-size: 20px;
@@ -74,7 +74,7 @@
     line-height: 1.2em;
 }
 
-.testimonial-page-section .testimonial-block .inner-box .content .text {
+.review-page-section .review-block .inner-box .content .text {
     position: relative;
     color: #797979;
     font-size: 17px;

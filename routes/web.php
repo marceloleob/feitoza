@@ -32,8 +32,8 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Gallery
     Route::get('gallery', 'GalleryController@index')->name('gallery');
-    // Testimonials
-    Route::get('testimonials', 'TestimonialController@index')->name('testimonial');
+    // reviews
+    Route::get('reviews', 'reviewController@index')->name('review');
     // About Us
     Route::get('about-us', 'AboutController@index')->name('about');
     // Contact Us
@@ -69,12 +69,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     // Form Update ShowHome
     Route::get('gallery/service/{service?}/picture/{picture?}/showhome/{showhome?}', 'PicturesController@showHome')->name('gallery.picture.showhome');
 
-    // Testimonials List
-    Route::get('testimonials', 'TestimonialsController@index')->name('testimonials.list');
-    Route::get('testimonial', 'TestimonialsController@create')->name('testimonial.new');
-    Route::get('testimonial/{id?}', 'TestimonialsController@create')->name('testimonial.edit');
-    Route::post('testimonial', 'TestimonialsController@store')->name('testimonial.store');
-    Route::get('testimonial/delete/{id?}', 'TestimonialsController@destroy')->name('testimonial.destroy');
+    // Reviews List
+    Route::get('reviews', 'ReviewsController@index')->name('reviews.list');
+    Route::get('review', 'ReviewsController@create')->name('review.new');
+    Route::get('review/{id?}', 'ReviewsController@create')->name('review.edit');
+    Route::post('review', 'ReviewsController@store')->name('review.store');
+    Route::get('review/delete/{id?}', 'ReviewsController@destroy')->name('review.destroy');
 });
 
 /**

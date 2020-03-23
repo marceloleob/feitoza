@@ -1,9 +1,9 @@
 @extends('site.layouts.pages')
 
-@section('title-page', 'Testimonials')
+@section('title-page', 'Reviews')
 
 @section('css-custom')
-{!! Html::style('css/site/pages/testimonial.css') !!}
+{!! Html::style('css/site/pages/review.css') !!}
 @stop
 
 @section('content')
@@ -13,8 +13,8 @@
 			<div class="wrap-columns">
 				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
-						{{-- Testimonial Section --}}
-						<section class="testimonial-page-section">
+						{{-- Reviews Section --}}
+						<section class="review-page-section">
 							<div class="auto-container">
 								{{--
 								<div class="sec-title">
@@ -23,18 +23,18 @@
 								<div class="styled-text">Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
 								--}}
 								<div class="row clearfix">
-									{{-- @if (count($testimonials)) --}}
-										{{-- Testimonial Block --}}
-										{{-- @foreach ($testimonials as $testimonial) --}}
-										{{-- <div id="{!! $testimonial->id !!}" class="testimonial-block col-lg-12 col-md-12 col-sm-12 col-xs-12"> --}}
-										<div id="" class="testimonial-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									{{-- @if (count($reviews)) --}}
+										{{-- Reviews Block --}}
+										{{-- @foreach ($reviews as $review) --}}
+										{{-- <div id="{!! $review->id !!}" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12"> --}}
+										<div id="" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<div class="inner-box">
 												<div class="content">
 													<div class="left-box">
 														<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
 													</div>
-													{{-- <h3>{!! $testimonial->name !!}</h3> --}}
-													{{-- <div class="text">{!! $testimonial->text !!}</div> --}}
+													{{-- <h3>{!! $review->name !!}</h3> --}}
+													{{-- <div class="text">{!! $review->text !!}</div> --}}
 													<h3>Marcelo Leopold</h3>
 													<div class="text">Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus suscipit
                                                     tortor eget felis porttitor volutpat. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta
@@ -46,14 +46,14 @@
 											</div>
 										</div>
 										{{-- @endforeach --}}
-										{{-- Testimonial Block --}}
+										{{-- Reviews Block --}}
 									{{-- @else
-										<div class="no-testimonial">There is no testimonial yes.</div>
+										<div class="no-review">There is no review yes.</div>
 									@endif --}}
 								</div>
 							</div>
 						</section>
-						{{-- End Testimonial Section --}}
+						{{-- End Reviews Section --}}
 					</div>
 				</div>
 			</div>

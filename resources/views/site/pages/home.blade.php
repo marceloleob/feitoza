@@ -162,28 +162,28 @@
 	</section>
 	{{-- End Offer Section --}}
 
-	{{-- Testimonial Section --}}
-	{{-- @if (count($testimonials)) --}}
+	{{-- Reviews Section --}}
+	{{-- @if (count($reviews)) --}}
 	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
 				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
-						{{-- Testimonial Section --}}
-						<section class="testimonial-section">
+						{{-- Reviews Section --}}
+						<section class="review-section">
 							<div class="auto-container">
 								<div class="title-box">
-									<h2>Testimonials</h2>
+									<h2>Reviews</h2>
 									<div class="title">Dozens of people get benefit</div>
 								</div>
-								{{-- Testimonial Carousel --}}
-								<div class="owl-testimonials owl-carousel owl-theme owl-loaded">
+								{{-- Reviews Carousel --}}
+								<div class="owl-reviews owl-carousel owl-theme owl-loaded">
 									<div class="owl-stage-outer">
 										<div class="owl-stage">
-											{{-- Testimonial Box --}}
-											{{-- @foreach ($testimonials as $testimonial) --}}
+											{{-- Reviews Box --}}
+											{{-- @foreach ($reviews as $review) --}}
 												<div class="owl-item">
-													<div class="testimonial-block">
+													<div class="review-block">
 														<div class="inner-box">
 															<div class="content">
 																<div class="left-box">
@@ -198,7 +198,7 @@
 													</div>
 												</div>
 												<div class="owl-item">
-													<div class="testimonial-block">
+													<div class="review-block">
 														<div class="inner-box">
 															<div class="content">
 																<div class="left-box">
@@ -213,7 +213,7 @@
 													</div>
 												</div>
 												<div class="owl-item">
-													<div class="testimonial-block">
+													<div class="review-block">
 														<div class="inner-box">
 															<div class="content">
 																<div class="left-box">
@@ -228,24 +228,24 @@
 													</div>
 												</div>
 											{{-- @endforeach --}}
-											{{-- Testimonial Box --}}
+											{{-- Reviews Box --}}
 										</div>
 									</div>
 								</div>
-								{{-- End Testimonial Carousel --}}
+								{{-- End Reviews Carousel --}}
 								<div class="footer-box">
-									<h2><a href="{!! url('testimonial') !!}">See all testimonials</a></h2>
+									<h2><a href="{!! url('review') !!}">See all reviews</a></h2>
 								</div>
 							</div>
 						</section>
-						{{-- End Testimonial Section --}}
+						{{-- End Reviews Section --}}
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	{{-- @endif --}}
-	{{-- End Testimonial Section --}}
+	{{-- End review Section --}}
 
 	{{-- Sponsors Section --}}
 	<section class="row">

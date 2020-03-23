@@ -19,10 +19,10 @@ $(document).ready(function ()
 	}
 
 	/**
-	 * Carrega os testimoniais
+	 * Carrega os Reviews
 	 */
-	if ($('.owl-testimonials').length) {
-		var owl = $('.owl-testimonials');
+	if ($('.owl-reviews').length) {
+		var owl = $('.owl-reviews');
 		owl.owlCarousel({
 			loop: true,
 			margin: 10,

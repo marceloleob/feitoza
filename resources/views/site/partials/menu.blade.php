@@ -15,10 +15,10 @@
 			<a href="{!! route('home') !!}" title="Home">Home</a>
 		</li>
 		<li class="menu-item {!! ($current == 'gallery') ? 'current' : '' !!}">
-			<a href="{!! route('gallery') !!}" title="Testimonials">Image Gallery</a>
+			<a href="{!! route('gallery') !!}" title="Image Gallery">Image Gallery</a>
 		</li>
-		<li class="menu-item {!! ($current == 'testimonial') ? 'current' : '' !!}">
-			<a href="{!! route('testimonial') !!}" title="Testimonials">Testimonials</a>
+		<li class="menu-item {!! ($current == 'reviews') ? 'current' : '' !!}">
+			<a href="{!! route('review') !!}" title="Reviews">Reviews</a>
 		</li>
 		<li class="menu-item {!! ($current == 'about') ? 'current' : '' !!}">
 			<a href="{!! route('about') !!}" title="About Us">About Us</a>

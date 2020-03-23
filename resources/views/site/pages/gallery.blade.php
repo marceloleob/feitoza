@@ -13,7 +13,7 @@
 			<div class="wrap-columns">
 				<div class="col-sm-12 column col-sm-12">
 					<div class="col-container">
-						{{-- Testimonial Section --}}
+						{{-- Gallery Section --}}
 						<section class="gallery-classic-section">
 							<div class="auto-container">
 								{{-- MixitUp Galery --}}
@@ -128,7 +128,7 @@
 								</div>
 							</div>
 						</section>
-						{{-- End Testimonial Section --}}
+						{{-- End Gallery Section --}}
 					</div>
 				</div>
 			</div>

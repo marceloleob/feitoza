@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TestimonialController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Renderiza a pagina
@@ -14,6 +14,6 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        return view('site.pages.testimonial')->with(['current' => 'testimonial']);
+        return view('site.pages.review')->with(['current' => 'review']);
     }
 }

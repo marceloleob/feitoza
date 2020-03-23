@@ -752,7 +752,7 @@
 		margin-bottom:30px;
 	}
 
-	.testimonial-section .title-box h2,
+	.review-section .title-box h2,
 	.team-section .title-column h2,
 	.error-section h2,
 	.fluid-section-one .title-column .inner-column .emergency span,
@@ -761,7 +761,7 @@
 		font-size:28px;
 	}
 
-	.testimonial-section .title-box .title{
+	.review-section .title-box .title{
 		font-size:16px;
 	}
 
@@ -921,11 +921,11 @@
 		font-size:20px;
 	}
 
-	.testimonial-block .inner-box .content{
+	.review-block .inner-box .content{
 		padding-left:0px;
 	}
 
-	.testimonial-block .inner-box .content .left-box{
+	.review-block .inner-box .content .left-box{
 		position:relative;
 		margin-bottom:15px;
 	}
@@ -1097,7 +1097,7 @@
 		padding-right:0px;
 	}
 
-	.testimonial-block .inner-box{
+	.review-block .inner-box{
 		padding:25px 15px;
 	}
 
