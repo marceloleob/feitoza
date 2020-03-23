@@ -15,7 +15,7 @@
                     {!! Form::notification('email', $errors) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::text('password', '', ['class' => 'form-control text', 'placeholder' => 'Password']) !!}
+                    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
                     {!! Form::notification('password', $errors) !!}
                 </div>
                 <div class="form-group">
