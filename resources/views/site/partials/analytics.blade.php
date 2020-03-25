@@ -1,6 +1,5 @@
 
-{{ env('APP_ENV') }}
-@if (env('APP_ENV') == 'production')
+@if (Config::get('app.env') == 'production')
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161429430-1"></script>
