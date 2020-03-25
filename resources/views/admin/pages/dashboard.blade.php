@@ -1,19 +1,21 @@
 @extends('admin.layouts.main')
 
-@section('title', 'Dashboard')
-
-@section('css-custom')
-    {!! Html::style('css/admin/pages/dashboard.css') !!}
-@stop
-
 @section('content')
 
-    <div class="row clearfix">
-        <div class="welcome-box">
-            <div class="welcome-text">
-                <h1>Aqui ficam as coisas da Dashboard</h1>
-            </div>
-        </div>
+	<div class="app-page-title">
+		<div class="page-title-wrapper">
+			<div class="page-title-heading">
+				<div class="page-title-icon">
+					<i class="fas fa-chart-line icon-gradient bg-ripe-malin">
+					</i>
+				</div>
+				<div>
+					Área Administrativa - {!! Config::get('app.name') !!}
+					<div class="page-title-subheading"></div>
+				</div>
+			</div>
+		</div>
     </div>
 
-@stop
+
+@endsection

@@ -1,0 +1,45 @@
+/* =========================================================================
+CUSTOMS
+=========================================================================*/
+.card-no-records {
+    display: flex;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    height: 10rem;
+    justify-content: center;
+    text-transform: uppercase;
+    color: rgba(13, 27, 62, 0.7);
+    font-weight: bold;
+    font-size: .88rem;
+}
+
+.swatch-holder-md {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    border: 2px solid #444054;
+    border-radius: 30px;
+    opacity: 1;
+}
+
+.app-footer-center {
+    display: block;
+    padding: 20px;
+    background: #fafbfc;
+}
+
+.app-footer-center .company {
+    text-transform: uppercase;
+}
+
+.app-footer-center a.turnupweb {
+    color: #3f6ad8;
+    padding-left: 2px;
+}
+
+.app-footer-center a.turnupweb:hover {
+    font-weight: bold;
+    text-decoration: none !important;
+    outline: none;
+}

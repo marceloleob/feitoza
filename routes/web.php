@@ -33,7 +33,7 @@ Route::group(['namespace' => 'Site'], function () {
     // Gallery
     Route::get('gallery', 'GalleryController@index')->name('gallery');
     // reviews
-    Route::get('reviews', 'reviewController@index')->name('review');
+    Route::get('reviews', 'ReviewController@index')->name('review');
     // About Us
     Route::get('about-us', 'AboutController@index')->name('about');
     // Contact Us
@@ -48,33 +48,42 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     // Home
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
-    // Services
-    Route::get('services', 'ServicesController@index')->name('service.list');
-    Route::get('service', 'ServicesController@create')->name('service.new');
-    Route::get('services/{service?}', 'ServicesController@create')->name('service.edit');
-    Route::post('services', 'ServicesController@store')->name('service.store');
+    // Galleries
+    Route::get('galleries', 'GalleryController@index')->name('gallery.list');
+    Route::post('galleries', 'GalleryController@index')->name('gallery.search');
+    Route::get('gallery', 'GalleryController@create')->name('gallery.new');
+    Route::post('gallery', 'GalleryController@store')->name('gallery.store');
+    Route::get('gallery/{id?}', 'GalleryController@edit')->name('gallery.edit');
 
-    // List Services by Pictures
-    Route::get('gallery/services', 'PicturesController@index')->name('gallery.services');
-    // Form Create new Picture
-    Route::get('gallery/picture/new', 'PicturesController@create')->name('gallery.service.new');
-    // Form Create or Edit of expecific Service
-    Route::get('gallery/service/{service?}', 'PicturesController@create')->name('gallery.service.edit');
-    // Form Edit of expecific Picture by Service
-    Route::get('gallery/service/{service?}/picture/{picture?}', 'PicturesController@create')->name('gallery.picture.edit');
-    // Post Form
-    Route::post('gallery/picture', 'PicturesController@store')->name('gallery.picture.store');
-    // Delete
-    Route::get('gallery/service/{service?}/picture/{picture?}/delete', 'PicturesController@destroy')->name('gallery.picture.destroy');
-    // Form Update ShowHome
-    Route::get('gallery/service/{service?}/picture/{picture?}/showhome/{showhome?}', 'PicturesController@showHome')->name('gallery.picture.showhome');
+    // Pictures
+    Route::get('pictures', 'PictureController@index')->name('picture.list');
+    Route::post('pictures', 'PictureController@index')->name('picture.search');
+    Route::get('picture', 'PictureController@create')->name('picture.new');
+    Route::post('picture', 'PictureController@store')->name('picture.store');
+    Route::get('picture/{id?}', 'PictureController@edit')->name('picture.edit');
+
+
+    // // List Pictures by Gallery
+    // Route::get('gallery/services', 'PicturesController@index')->name('gallery.services');
+    // // Form Create new Picture
+    // Route::get('gallery/picture/new', 'PicturesController@create')->name('gallery.service.new');
+    // // Form Create or Edit of expecific Service
+    // Route::get('gallery/service/{service?}', 'PicturesController@create')->name('gallery.service.edit');
+    // // Form Edit of expecific Picture by Service
+    // Route::get('gallery/service/{service?}/picture/{picture?}', 'PicturesController@create')->name('gallery.picture.edit');
+    // // Post Form
+    // Route::post('gallery/picture', 'PicturesController@store')->name('gallery.picture.store');
+    // // Delete
+    // Route::get('gallery/service/{service?}/picture/{picture?}/delete', 'PicturesController@destroy')->name('gallery.picture.destroy');
+    // // Form Update ShowHome
+    // Route::get('gallery/service/{service?}/picture/{picture?}/showhome/{showhome?}', 'PicturesController@showHome')->name('gallery.picture.showhome');
 
     // Reviews List
-    Route::get('reviews', 'ReviewsController@index')->name('reviews.list');
-    Route::get('review', 'ReviewsController@create')->name('review.new');
-    Route::get('review/{id?}', 'ReviewsController@create')->name('review.edit');
-    Route::post('review', 'ReviewsController@store')->name('review.store');
-    Route::get('review/delete/{id?}', 'ReviewsController@destroy')->name('review.destroy');
+    Route::get('reviews', 'ReviewController@index')->name('reviews.list');
+    Route::get('review', 'ReviewController@create')->name('review.new');
+    Route::post('review', 'ReviewController@store')->name('review.store');
+    Route::get('review/{id?}', 'ReviewController@create')->name('review.edit');
+    Route::get('review/delete/{id?}', 'ReviewController@destroy')->name('review.destroy');
 });
 
 /**
@@ -86,7 +95,3 @@ Auth::routes(
         'verify'   => true
     ]
 );
-
-Route::get('profile', function () {
-    return 'Usuario verificado';
-})->middleware('verified');
