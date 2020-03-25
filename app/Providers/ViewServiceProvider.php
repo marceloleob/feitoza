@@ -33,6 +33,7 @@ class ViewServiceProvider extends ServiceProvider
 
         // binda os arquivos do dashboard
         View::composer('admin.*', function () use ($adminlte) {
+            //dd($adminlte);
             // envia o parametro do menu default
             View::share('adminlte', $adminlte);
         });

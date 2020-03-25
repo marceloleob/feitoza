@@ -3,21 +3,30 @@
 
 @include('admin.partials.head')
 
-<body class="skin-blue sidebar-mini" cz-shortcut-listen="true" style="height: auto; min-height: 100%;">
+<body class="hold-transition skin-blue sidebar-mini">
 
 	<div class="wrapper">
 
-		{{-- Main Header --}}
-		@include('admin.partials.header')
+        {{-- Main Header --}}
+        <header class="main-header">
+		    @include('admin.partials.header')
+        </header>
 
 		{{-- Menu --}}
 		<aside class="main-sidebar">
-			<section class="sidebar">
+			{{-- <section class="sidebar">
 				<ul class="sidebar-menu" data-widget="tree">
 					@each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
 				</ul>
-			</section>
-		</aside>
+            </section> --}}
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column {{config('adminlte.classes_sidebar_nav', '')}}" data-widget="treeview" role="menu" @if(config('adminlte.sidebar_nav_animation_speed') != 300) data-animation-speed="{{config('adminlte.sidebar_nav_animation_speed')}}" @endif @if(!config('adminlte.sidebar_nav_accordion')) data-accordion="false" @endif>
+                        @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
+                    </ul>
+                </nav>
+            </div>
+        </aside>
 		{{-- End Menu --}}
 
 		{{-- Content Wrapper --}}

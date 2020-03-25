@@ -1,4 +1,5 @@
 
+{{ env('APP_ENV') }}
 @if (env('APP_ENV') == 'production')
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
