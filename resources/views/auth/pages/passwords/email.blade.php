@@ -1,47 +1,34 @@
-@extends('adminlte::master')
-
-@section('adminlte_css')
-    <link rel="stylesheet" href="{!! asset('vendor/adminlte/css/auth.css') !!}">
-    @yield('css')
-@stop
-
-@section('body_class', 'login-page')
+@extends('auth.layouts.main')
 
 @section('body')
+
     <div class="login-box">
         <div class="login-logo">
-            <a href="{!! url(config('adminlte.dashboard_url', 'home')) !!}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+            <a href="{!! route('home') !!}" target="_blank">
+                <img src="{!! asset('images/logo.png') !!}" class="logo" alt="{!! Config::get('app.name') !!}" title="{!! Config::get('app.name') !!}" />
+            </a>
         </div>
-        <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">{!! trans('adminlte::adminlte.password_reset_message') !!}</p>
+            <p class="login-box-msg">Forgot Password</p>
             @if (session('status'))
                 <div class="alert alert-success">
                     {!! session('status') !!}
                 </div>
             @endif
-            <form action="{!! url(config('adminlte.password_email_url', 'password/email')) !!}" method="post">
-                {!! csrf_field() !!}
-
-                <div class="form-group has-feedback {!! $errors->has('email') ? 'has-error' : '' !!}">
-                    <input type="email" name="email" class="form-control" value="{!! isset($email) ? $email : old('email') !!}"
-                           placeholder="{!! trans('adminlte::adminlte.email') !!}">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{!! $errors->first('email') !!}</strong>
-                        </span>
-                    @endif
+            {!! Form::open(['id' => 'form-email', 'route' => 'password.email', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
+                <div class="form-group">
+                    {!! Form::email('email', old('email'), ['class' => 'form-control email', 'placeholder' => 'E-mail']) !!}
+                    {!! Form::notification('email', $errors) !!}
                 </div>
-                <button type="submit"
-                        class="btn btn-primary btn-block btn-flat"
-                >{!! trans('adminlte::adminlte.send_password_reset_link') !!}</button>
-            </form>
+                <div class="form-group">
+                    @csrf
+                    {!! Form::button('<i class="fas fa-envelope-open-text"></i> &nbsp; Send Password Reset Link', ['type' => 'submit', 'class' => 'btn btn-primary btn-block btn-flat']) !!}
+                </div>
+            {!! Form::close() !!}
+            <div class="auth-links">
+                <a href="{!! route('login') !!}">Voltar</a>
+            </div>
         </div>
-        <!-- /.login-box-body -->
-    </div><!-- /.login-box -->
-@stop
+    </div>
 
-@section('adminlte_js')
-    @yield('js')
 @stop

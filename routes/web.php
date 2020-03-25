@@ -83,5 +83,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 Auth::routes(
     [
         'register' => false,
+        'verify'   => true
     ]
 );
+
+Route::get('profile', function () {
+    return 'Usuario verificado';
+})->middleware('verified');

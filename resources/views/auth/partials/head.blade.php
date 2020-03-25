@@ -7,8 +7,6 @@
     <title>{!! Config::get('app.name') !!}</title>
 
     {{-- METAS TAG --}}
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
     <meta name="author" content="{!! config('constants.DEVELOPER_NAME') . ' <' . config('constants.DEVELOPER_EMAIL') . '>' !!}" />
     <meta name="copyright" content="{!! config('constants.COMPANY_NAME') !!}" />
     <meta name="csrf-token" content="{!! csrf_token() !!}" />
@@ -24,9 +22,6 @@
     {{-- CSS LIBS --}}
     {!! Html::style('vendor/bootstrap/css/bootstrap.min.css') !!}
     {!! Html::style('vendor/fontawesome-free/css/all.min.css') !!}
-    {!! Html::style('vendor/flaticon/all.css') !!}
-    {{-- {!! Html::style('vendor/ionicons.min.css') !!} --}}
-    {!! Html::style('vendor/adminlte/dist/css/adminlte.min.css') !!}
     {{-- CSS CUSTOM --}}
     {!! Html::style('css/auth/main.css') !!}
     {!! Html::style('css/forms.css') !!}
