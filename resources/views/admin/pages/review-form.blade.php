@@ -21,13 +21,13 @@
 				<i class="fas fa-store icon-gradient bg-plum-plate"></i>
 			</div>
 			<div>
-				Galeria
-				<div class="page-title-subheading">Formulário de galerias.</div>
+				Review
+				<div class="page-title-subheading">Formulário das reviews.</div>
 			</div>
 		</div>
 		<div class="page-title-actions">
 			<div class="d-inline-block dropdown">
-				<a href="{!! route('gallery.list') !!}" class="mb-2 mr-2 btn-transition btn btn-outline-focus">
+				<a href="{!! route('review.list') !!}" class="mb-2 mr-2 btn-transition btn btn-outline-focus">
 					<span class="btn-icon-wrapper pr-2 opacity-9"><i class="fas fa-arrow-circle-left fa-w-20"></i></span>
 					Voltar
 				</a>
@@ -46,17 +46,26 @@
 	<div class="col-md-12">
 		<div class="main-card mb-3 card">
 			<div class="card-body"><h5 class="card-title">Preencha o formulário</h5>
-				{!! Form::open(['id' => 'form-gallery', 'route' => 'gallery.store', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
-                    @csrf
-                    <div class="position-relative form-group">
-						{!! Form::label('name', 'Nome para a galeria') !!}
+				{!! Form::open(['id' => 'form-gallery', 'route' => 'review.store', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
+					<div class="position-relative form-group">
+						{!! Form::label('name', 'Nome da pessoa') !!}
 						{!! Form::text('name', old('name', $data->name), ['class' => 'form-control text']) !!}
 						{!! Form::notification('name', $errors) !!}
+					</div>
+					<div class="position-relative form-group">
+						{!! Form::label('link', 'Link do verdadeiro review') !!}
+						{!! Form::text('link', old('link', $data->link), ['class' => 'form-control text']) !!}
+						{!! Form::notification('link', $errors) !!}
+					</div>
+					<div class="position-relative form-group">
+						{!! Form::label('text', 'Texto') !!}
+						{!! Form::textarea('text', old('text', $data->text), ['class' => 'form-control']) !!}
+						{!! Form::notification('text', $errors) !!}
 					</div>
 
 					@if (isset($data->id))
 						{!! Form::hidden('id', $data->id, ['id' => 'id']) !!}
-                    @endif
+					@endif
 					{!! Form::button('<i class="far fa-save"></i> &nbsp; Salvar', ['type' => 'submit', 'class' => 'btn btn-success mb-2 mr-2']) !!}
 				{!! Form::close() !!}
 			</div>

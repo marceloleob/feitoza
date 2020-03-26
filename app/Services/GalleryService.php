@@ -96,14 +96,11 @@ class GalleryService extends BaseService
     public static function store($data = [])
     {
         try {
-
-            $data['friendly'] = $data['name'];
+            $data['friendly'] = self::friendly($data['name']);
             // save or update
             $entity = Gallery::store($data);
-
             // retorna a entidade criada ou atualizada
             return [
-
                 'success' => 'Cadastrado com sucesso!',
                 'entity'  => $entity,
             ];
@@ -114,5 +111,16 @@ class GalleryService extends BaseService
                 'error'  => $exception,
             ];
         }
+    }
+
+    /**
+     * Hidrata o campo name para transforma-lo em friendly name
+     *
+     * @param string $name
+     * @return string
+     */
+    public static function friendly($name)
+    {
+        return strtolower(str_replace(' ', '-', str_replace('  ', ' ', preg_replace("/[^A-Za-z ]/", '', $name))));
     }
 }

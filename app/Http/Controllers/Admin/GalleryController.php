@@ -29,11 +29,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $params = [
-            'data' => GalleryService::find(),
-        ];
-
-        return view('admin.pages.gallery-form')->with($params);
+        return view('admin.pages.gallery-form')->with(['data' => GalleryService::find()]);
     }
 
     /**
@@ -46,7 +42,7 @@ class GalleryController extends Controller
     {
         // sanitized and validated data
         $data = $request->validated();
-
+        // save or update
         $response = GalleryService::store($data);
 
         return redirect()->route('gallery.list')->with($response);
@@ -60,11 +56,7 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        $params = [
-            'data' => GalleryService::find($id),
-        ];
-
-        return view('admin.pages.gallery-form')->with($params);
+        return view('admin.pages.gallery-form')->with(['data' => GalleryService::find($id)]);
     }
 
     /**
