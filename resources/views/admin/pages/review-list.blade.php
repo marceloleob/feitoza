@@ -64,10 +64,10 @@
                                 <td class="text-center text-muted">{!! $item->id !!}</td>
 								<td class="text-left">{!! $item->name !!}</td>
 								<td class="text-center"><div id="div-{!! $item->id !!}" class="div-{!! $item->id !!} badge badge-{!! $item->status['class'] !!}">{!! $item->status['label'] !!}</div></td>
-								<td class="text-center">
-									<a href="{!! route('review.edit', [$item->id, $data->currentPage()]) !!}" class="btn btn-primary btn-sm">Editar</a>
-									<button class="border-0 btn-transition btn {!! $item->trash['class'] !!}"><i class="fas {!! $item->trash['label'] !!}"></i></button>
-								</td>
+                                <td class="text-center">
+                                    <a href="{!! route('review.edit', $item->id) !!}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{!! route('review.toggle', $item->id) !!}" class="border-0 btn-transition btn {!! $item->trash['class'] !!}"><i class="fas {!! $item->trash['label'] !!}"></i></a>
+                                </td>
 							</tr>
 							@endforeach
 						</tbody>

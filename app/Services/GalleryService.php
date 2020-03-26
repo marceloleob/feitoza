@@ -61,4 +61,29 @@ class GalleryService extends BaseService
 
         return Gallery::find($id)->first();
     }
+
+    /**
+     * Altera o status do registro
+     *
+     * @param int $id
+     * @return array
+     */
+    public static function toggleStatus($id)
+    {
+        try {
+            // executa a acao direto do Model
+            $entity = Gallery::toggleStatus($id);
+            // retorna a entidade criada ou atualizada
+            return [
+                'success'   => 'A galeria "' . $entity->name . '" foi ' . (($entity->status == true) ? 'ativada' : 'desativada!'),
+                'exception' => '',
+            ];
+        } catch (Exception $exception) {
+            // retorna a entidade criada ou atualizada
+            return [
+                'danger'    => 'Erro ao ativar/desativar a galeria ' . $id,
+                'exception' => $exception,
+            ];
+        }
+    }
 }

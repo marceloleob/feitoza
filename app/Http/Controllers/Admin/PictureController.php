@@ -28,18 +28,12 @@ class PictureController extends Controller
      */
     public function create()
     {
-        //
-    }
+        $params = [
+            'data'    => PictureService::find(),
+            'options' => PictureService::options()
+        ];
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('admin.pages.picture-form')->with($params);
     }
 
     /**
@@ -77,13 +71,15 @@ class PictureController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Toggle the status storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function toggle($id)
     {
-        //
+        $response = PictureService::toggleStatus($id);
+
+        return redirect()->route('picture.list')->with($response);
     }
 }

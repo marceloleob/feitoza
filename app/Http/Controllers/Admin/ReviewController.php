@@ -28,7 +28,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.review-form');
     }
 
     /**
@@ -38,17 +38,6 @@ class ReviewController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
         //
     }
@@ -77,13 +66,15 @@ class ReviewController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Toggle the status storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function toggle($id)
     {
-        //
+        $response = ReviewService::toggleStatus($id);
+
+        return redirect()->route('review.list')->with($response);
     }
 }

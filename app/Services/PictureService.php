@@ -63,4 +63,29 @@ class PictureService extends BaseService
 
         return Picture::find($id)->first();
     }
+
+    /**
+     * Altera o status do registro
+     *
+     * @param int $id
+     * @return array
+     */
+    public static function toggleStatus($id)
+    {
+        try {
+            // executa a acao direto do Model
+            $entity = Picture::toggleStatus($id);
+            // retorna a entidade criada ou atualizada
+            return [
+                'success'   => 'A foto "' . $entity->name . '" foi ' . (($entity->status == true) ? 'ativada' : 'desativada!'),
+                'exception' => '',
+            ];
+        } catch (Exception $exception) {
+            // retorna a entidade criada ou atualizada
+            return [
+                'danger'    => 'Erro ao ativar/desativar a foto ' . $id,
+                'exception' => $exception,
+            ];
+        }
+    }
 }

@@ -28,12 +28,11 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        // $params = [
-        //     'data'            => GalleryService::find(),
-        //     'optionsmaterial' => MaterialService::options(),
-        // ];
+        $params = [
+            'data' => GalleryService::find(),
+        ];
 
-        // return view('admin.pages.gallery-form')->with($params);
+        return view('admin.pages.gallery-form')->with($params);
     }
 
     /**
@@ -47,16 +46,6 @@ class GalleryController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -82,13 +71,15 @@ class GalleryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Toggle the status storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function toggle($id)
     {
-        //
+        $response = GalleryService::toggleStatus($id);
+
+        return redirect()->route('gallery.list')->with($response);
     }
 }

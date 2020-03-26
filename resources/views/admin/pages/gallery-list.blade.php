@@ -10,7 +10,7 @@
 			</div>
 			<div>
 				Galeria
-				<div class="page-title-subheading">Lista dos itens da galeria.</div>
+				<div class="page-title-subheading">Lista de todos os itens da galeria.</div>
 			</div>
 		</div>
 		<div class="page-title-actions">
@@ -49,29 +49,29 @@
 					</div>
 				</div>
 				<div class="table-responsive">
-					<table class="align-middle mb-0 table table-borderless table-striped table-hover">
-						<thead>
-							<tr>
-								<th width="10%" class="text-center"><b>Código</b></th>
-								<th width="60%" class="text-left"><b>Nome</b></th>
-								<th width="15%" class="text-center"><b>Status</b></th>
-								<th width="15%" class="text-center"><b>Ações</b></th>
-							</tr>
-						</thead>
-						<tbody>
-							@foreach ($data as $item)
-							<tr>
-								<td class="text-center text-muted">{!! $item->id !!}</td>
-								<td class="text-left">{!! $item->name !!}</td>
-								<td class="text-center"><div id="div-{!! $item->id !!}" class="div-{!! $item->id !!} badge badge-{!! $item->status['class'] !!}">{!! $item->status['label'] !!}</div></td>
-								<td class="text-center">
-									<a href="{!! route('gallery.edit', [$item->id, $data->currentPage()]) !!}" class="btn btn-primary btn-sm">Editar</a>
-									<button class="border-0 btn-transition btn {!! $item->trash['class'] !!}"><i class="fas {!! $item->trash['label'] !!}"></i></button>
-								</td>
-							</tr>
-							@endforeach
-						</tbody>
-					</table>
+                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th width="10%" class="text-center"><b>Código</b></th>
+                                <th width="60%" class="text-left"><b>Nome</b></th>
+                                <th width="15%" class="text-center"><b>Status</b></th>
+                                <th width="15%" class="text-center"><b>Ações</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $item)
+                            <tr>
+                                <td class="text-center text-muted">{!! $item->id !!}</td>
+                                <td class="text-left">{!! $item->name !!}</td>
+                                <td class="text-center"><div id="div-{!! $item->id !!}" class="div-{!! $item->id !!} badge badge-{!! $item->status['class'] !!}">{!! $item->status['label'] !!}</div></td>
+                                <td class="text-center">
+                                    <a href="{!! route('gallery.edit', $item->id) !!}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{!! route('gallery.toggle', $item->id) !!}" class="border-0 btn-transition btn {!! $item->trash['class'] !!}"><i class="fas {!! $item->trash['label'] !!}"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 				</div>
 				<div class="card-footer">
 					<div class="col-md-12 pt-3">

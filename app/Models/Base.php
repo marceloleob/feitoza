@@ -42,4 +42,31 @@ class Base extends Model
             throw new Exception($exception);
         }
     }
+
+    /**
+     * Altera o status do registro
+     *
+     * @param int $id
+     * @return $this
+     */
+    public static function toggleStatus($id)
+    {
+        // inicia o acoplamento de uma transacao
+        DB::beginTransaction();
+
+        try {
+            $entity = self::find($id);
+            $entity->status = !$entity->status;
+            $entity->save();
+            // efetiva a transacao
+            DB::commit();
+            // retorna a entidade atualizada
+            return $entity;
+        } catch (Exception $exception) {
+            // descarta a transacao
+            DB::rollback();
+            // retorna o erro
+            throw new Exception($exception);
+        }
+    }
 }

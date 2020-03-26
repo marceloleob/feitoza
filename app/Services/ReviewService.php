@@ -61,4 +61,29 @@ class ReviewService extends BaseService
 
         return Review::find($id)->first();
     }
+
+    /**
+     * Altera o status do registro
+     *
+     * @param int $id
+     * @return array
+     */
+    public static function toggleStatus($id)
+    {
+        try {
+            // executa a acao direto do Model
+            $entity = Review::toggleStatus($id);
+            // retorna a entidade criada ou atualizada
+            return [
+                'success'   => 'O reivew "' . $entity->name . '" foi ' . (($entity->status == true) ? 'ativado' : 'desativado!'),
+                'exception' => '',
+            ];
+        } catch (Exception $exception) {
+            // retorna a entidade criada ou atualizada
+            return [
+                'danger'    => 'Erro ao ativar/desativar o review ' . $id,
+                'exception' => $exception,
+            ];
+        }
+    }
 }

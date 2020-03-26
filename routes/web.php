@@ -51,17 +51,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     // Galleries
     Route::get('galleries', 'GalleryController@index')->name('gallery.list');
     Route::post('galleries', 'GalleryController@index')->name('gallery.search');
-    Route::get('gallery', 'GalleryController@create')->name('gallery.new');
+    Route::get('new-gallery', 'GalleryController@create')->name('gallery.new');
     Route::post('gallery', 'GalleryController@store')->name('gallery.store');
-    Route::get('gallery/{id?}', 'GalleryController@edit')->name('gallery.edit');
+    Route::get('gallery/{id}', 'GalleryController@edit')->name('gallery.edit');
+    Route::get('gallery/toggle/{id?}', 'GalleryController@toggle')->name('gallery.toggle');
 
     // Pictures
     Route::get('pictures', 'PictureController@index')->name('picture.list');
     Route::post('pictures', 'PictureController@index')->name('picture.search');
-    Route::get('picture', 'PictureController@create')->name('picture.new');
+    Route::get('new-picture', 'PictureController@create')->name('picture.new');
     Route::post('picture', 'PictureController@store')->name('picture.store');
     Route::get('picture/{id?}', 'PictureController@edit')->name('picture.edit');
-
+    Route::get('picture/toggle/{id?}', 'PictureController@toggle')->name('picture.toggle');
 
     // // List Pictures by Gallery
     // Route::get('gallery/services', 'PicturesController@index')->name('gallery.services');
@@ -79,11 +80,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     // Route::get('gallery/service/{service?}/picture/{picture?}/showhome/{showhome?}', 'PicturesController@showHome')->name('gallery.picture.showhome');
 
     // Reviews List
-    Route::get('reviews', 'ReviewController@index')->name('reviews.list');
-    Route::get('review', 'ReviewController@create')->name('review.new');
+    Route::get('reviews', 'ReviewController@index')->name('review.list');
+    Route::post('reviews', 'ReviewController@index')->name('review.search');
+    Route::get('new-review', 'ReviewController@create')->name('review.new');
     Route::post('review', 'ReviewController@store')->name('review.store');
-    Route::get('review/{id?}', 'ReviewController@create')->name('review.edit');
-    Route::get('review/delete/{id?}', 'ReviewController@destroy')->name('review.destroy');
+    Route::get('review/{id?}', 'ReviewController@edit')->name('review.edit');
+    Route::get('review/toggle/{id?}', 'ReviewController@toggle')->name('review.toggle');
 });
 
 /**

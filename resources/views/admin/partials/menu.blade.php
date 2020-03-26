@@ -46,12 +46,12 @@
 				<a href="{!! route('picture.list') !!}" class="{!! (request()->is('admin/pictures')) ? 'mm-active' : '' !!}"><i class="metismenu-icon far fa-images"></i> Imagens</a>
 			</li>
 			<li>
-				<a href="{!! route('reviews.list') !!}" class="{!! (request()->is('admin/reviews')) ? 'mm-active' : '' !!}"><i class="metismenu-icon fas fa-star"></i> Reviews</a>
+				<a href="{!! route('review.list') !!}" class="{!! (request()->is('admin/reviews')) ? 'mm-active' : '' !!}"><i class="metismenu-icon fas fa-star"></i> Reviews</a>
 			</li>
 
             <li class="app-sidebar__heading">SISTEMA</li>
 			<li>
-				<a href="javascript:void(0);" class="logout"><i class="metismenu-icon fas fa-sign-out-alt"></i> Sair</a>
+				<a href="javascript:void(0);" class="logout text-danger"><i class="metismenu-icon fas fa-sign-out-alt"></i> Sair</a>
 			</li>
 		</ul>
 	</div>

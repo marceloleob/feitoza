@@ -29,7 +29,7 @@ $(document).ready(function ()
      * Mostra a mensagem de retorno por 4 segundos
      */
     $('.alert').animate({
-        opacity: 1.0
+        opacity: 1
     }, 5000).fadeOut('slow');
 
     /**

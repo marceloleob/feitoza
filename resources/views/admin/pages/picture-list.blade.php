@@ -10,7 +10,7 @@
 			</div>
 			<div>
 				Imagens
-				<div class="page-title-subheading">Lista as fotos do site.</div>
+				<div class="page-title-subheading">Lista de todas as fotos do site.</div>
 			</div>
 		</div>
 		<div class="page-title-actions">
@@ -66,10 +66,10 @@
                                 <td class="text-left">{!! $item->gallery->name !!}</td>
 								<td class="text-left">{!! $item->name !!}</td>
 								<td class="text-center"><div id="div-{!! $item->id !!}" class="div-{!! $item->id !!} badge badge-{!! $item->status['class'] !!}">{!! $item->status['label'] !!}</div></td>
-								<td class="text-center">
-									<a href="{!! route('picture.edit', [$item->id, $data->currentPage()]) !!}" class="btn btn-primary btn-sm">Editar</a>
-									<button class="border-0 btn-transition btn {!! $item->trash['class'] !!}"><i class="fas {!! $item->trash['label'] !!}"></i></button>
-								</td>
+                                <td class="text-center">
+                                    <a href="{!! route('picture.edit', $item->id) !!}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{!! route('picture.toggle', $item->id) !!}" class="border-0 btn-transition btn {!! $item->trash['class'] !!}"><i class="fas {!! $item->trash['label'] !!}"></i></a>
+                                </td>
 							</tr>
 							@endforeach
 						</tbody>

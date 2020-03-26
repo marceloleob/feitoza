@@ -43,3 +43,9 @@ CUSTOMS
     text-decoration: none !important;
     outline: none;
 }
+
+.app-header__logo .logo-src {
+    height: 25px;
+    font-weight: 800;
+    background: none;
+}
