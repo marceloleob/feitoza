@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\GalleryRequest;
 use App\Services\GalleryService;
 use Illuminate\Http\Request;
 
@@ -11,8 +12,8 @@ class GalleryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return Response
      */
     public function index(Request $request)
     {
@@ -24,7 +25,7 @@ class GalleryController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -38,43 +39,39 @@ class GalleryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  GalleryRequest  $request
+     * @return Response
      */
-    public function store(Request $request)
+    public function store(GalleryRequest $request)
     {
-        //
-    }
+        // sanitized and validated data
+        $data = $request->validated();
 
+        $response = GalleryService::store($data);
+
+        return redirect()->route('gallery.list')->with($response);
+    }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($id)
     {
-        //
-    }
+        $params = [
+            'data' => GalleryService::find($id),
+        ];
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        return view('admin.pages.gallery-form')->with($params);
     }
 
     /**
      * Toggle the status storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function toggle($id)
     {

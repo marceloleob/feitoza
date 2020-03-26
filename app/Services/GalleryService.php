@@ -86,4 +86,33 @@ class GalleryService extends BaseService
             ];
         }
     }
+
+    /**
+     * Save or Update the entity
+     *
+     * @param array $data
+     * @return array
+     */
+    public static function store($data = [])
+    {
+        try {
+
+            $data['friendly'] = $data['name'];
+            // save or update
+            $entity = Gallery::store($data);
+
+            // retorna a entidade criada ou atualizada
+            return [
+
+                'success' => 'Cadastrado com sucesso!',
+                'entity'  => $entity,
+            ];
+        } catch (Exception $exception) {
+            // retorna a entidade criada ou atualizada
+            return [
+                'danger' => 'Erro ao ' . (isset($data['id']) ? 'atualizar' : 'cadastrar') . ', tente novamente!',
+                'error'  => $exception,
+            ];
+        }
+    }
 }

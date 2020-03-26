@@ -26,15 +26,16 @@ class Base extends Model
                 $entity = self::find($data['id']);
                 // realiza o update
                 $entity->update($data);
-
-                // efetiva a transacao
-                DB::commit();
-                // retorna a entidade atualizada
-                return $entity;
             } else {
                 // realiza o save e retorna o objeto
-                return self::create($data);
+                $entity = self::create($data);
             }
+
+            // efetiva a transacao
+            DB::commit();
+            // retorna a entidade
+            return $entity;
+
         } catch (Exception $exception) {
             // descarta a transacao
             DB::rollback();
