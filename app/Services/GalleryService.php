@@ -109,7 +109,7 @@ class GalleryService extends BaseService
             $entity = Gallery::store($data);
             // retorna a entidade criada ou atualizada
             return [
-                'success' => 'Cadastrado com sucesso!',
+                'success' => (isset($data['id'])) ? 'Atualizado' : 'Cadastrado' . ' com sucesso!',
                 'entity'  => $entity,
             ];
         } catch (Exception $exception) {

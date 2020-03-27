@@ -31,6 +31,6 @@ class Gallery extends Base
      */
     public function pictures()
     {
-        return $this->hasMany('App\Models\Picture');
+        return $this->hasMany('App\Models\Picture')->orderBy('name');
     }
 }

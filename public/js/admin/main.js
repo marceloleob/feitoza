@@ -41,6 +41,14 @@ $(document).ready(function ()
         return false;
     });
 
+    $('.clear-search').click(function (e) {
+        e.preventDefault();
+        console.log('teste');
+        $('input[name="search"]').val('');
+        $('#form-search').submit();
+        // document.getElementById('form-search').reset();
+        //document.getElementById('form-search').submit();
+    });
 
     /**
      * forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options

@@ -15,9 +15,11 @@ class ReviewService extends BaseService
      */
     public static function options()
     {
-        return Review::orderBy('name', 'ASC')
+        $options = Review::orderBy('name', 'ASC')
             ->where('status', '=', config('constants.ACTIVE'))
-            ->get();
+            ->pluck('name', 'id');
+
+        return $options->prepend(' -- Selecione -- ', '');
     }
 
     /**
@@ -105,7 +107,7 @@ class ReviewService extends BaseService
             $entity = Review::store($data);
             // retorna a entidade criada ou atualizada
             return [
-                'success' => 'Cadastrado com sucesso!',
+                'success' => (isset($data['id'])) ? 'Atualizado' : 'Cadastrado' . ' com sucesso!',
                 'entity'  => $entity,
             ];
         } catch (Exception $exception) {

@@ -55,6 +55,20 @@ CUSTOMS
 # GALLERY
 --------------------------------------------------------------*/
 
+.table img.photo {
+    max-width: 80px;
+    max-height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.form img.photo {
+    max-width: 250px;
+    max-height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
 input[type="file"] {
     display: none;
 }

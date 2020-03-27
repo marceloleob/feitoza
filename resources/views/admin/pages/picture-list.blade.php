@@ -43,7 +43,7 @@
 									<div class="input-group-append mr-2">
 										{!! Form::button('<i class="fas fa-search pr-2 pl-2"></i>', ['type' => 'submit', 'class' => 'btn btn-focus']) !!}
 									</div>
-									{!! Form::button('<i class="fas fa-backspace pr-2 pl-2"></i> Limpar a busca', ['type' => 'submit', 'class' => 'btn btn-focus']) !!}
+									{!! Form::button('<i class="fas fa-backspace pr-2 pl-2"></i> Limpar a busca', ['type' => 'button', 'class' => 'btn btn-focus clear-search']) !!}
 								</div>
 							{!! Form::close() !!}
 						</div>
@@ -54,8 +54,8 @@
 						<thead>
 							<tr>
 								<th width="10%" class="text-center"><b>Código</b></th>
-								<th width="20%" class="text-center"><b>Galeria</b></th>
-								<th width="40%" class="text-left"><b>Imagem</b></th>
+								<th width="20%" class="text-center"><b>Imagem</b></th>
+								<th width="40%" class="text-left"><b>Galeria</b></th>
 								<th width="15%" class="text-center"><b>Status</b></th>
 								<th width="15%" class="text-center"><b>Ações</b></th>
 							</tr>
@@ -64,10 +64,10 @@
 							@foreach ($data as $item)
 							<tr>
                                 <td class="text-center text-muted">{!! $item->id !!}</td>
-                                <td class="text-left">{!! $item->gallery->name !!}</td>
-								<td class="text-left">
-                                    <img src="{!! url('storage/' . $item->photo) !!}" alt="" style="width: 100px">
+								<td class="text-center">
+                                    <img src="{!! url('storage/' . $item->photo) !!}" alt="" class="photo" />
                                 </td>
+                                <td class="text-left">{!! $item->gallery->name !!}</td>
 								<td class="text-center"><div id="div-{!! $item->id !!}" class="div-{!! $item->id !!} badge badge-{!! $item->status['class'] !!}">{!! $item->status['label'] !!}</div></td>
                                 <td class="text-center">
                                     <a href="{!! route('picture.edit', $item->id) !!}" class="btn btn-primary btn-sm">Editar</a>
