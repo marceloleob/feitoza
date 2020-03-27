@@ -19,6 +19,13 @@ class BaseService
     public static $paginate;
 
     /**
+     * Armazena o valor da busca
+     *
+     * @var string $search
+     */
+    public static $search = null;
+
+    /**
      * Handler find first data
      *
      * @param Builder $query
@@ -64,8 +71,13 @@ class BaseService
 	{
 		// efetiva a busca no BD obedecendo as regras da paginacao
         self::$collection = $data = $query->paginate(config('constants.TOTAL_PAGE'));
-		// constroi os links da paginacao
-		self::$paginate   = $data->links();
+        // constroi os links da paginacao
+        self::$paginate = $data->links();
+        // verifica se foi feito uma busca
+        if (!empty(self::$search)) {
+            // constroi os links da paginacao
+            self::$paginate = $data->appends(['search' => self::$search])->links();
+        }
     }
 
 	/**

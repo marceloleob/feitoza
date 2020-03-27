@@ -21,18 +21,22 @@ class ReviewService extends BaseService
     }
 
     /**
-     * Monta a lista com paginacao
+     * Monta a lista com paginacao e busca
      *
+     * @param string $search
      * @return array
      */
-    public static function list($request)
+    public static function list($search)
     {
         // retorna a query para a busca do grid
         $query = Review::orderBy('name', 'ASC');
 
         // verifica se buscou algum item especifico
-        if (!empty($request['search'])) {
-            $query->where('name', 'LIKE', '%' . $request['search'] . '%');
+        if (!empty($search)) {
+            // armazena o valor da busca
+            parent::$search = $search;
+            // executa a busca
+            $query->where('name', 'LIKE', '%' . $search . '%');
         }
 
         // cria uma collection com pagination para montar o grid
@@ -42,6 +46,7 @@ class ReviewService extends BaseService
 
         return [
             'data'     => parent::$collection,
+            'search'   => parent::$search,
             'paginate' => parent::$paginate,
         ];
     }
@@ -59,7 +64,7 @@ class ReviewService extends BaseService
             return new Review;
         }
 
-        return Review::find($id)->first();
+        return Review::where('id', $id)->first();
     }
 
     /**

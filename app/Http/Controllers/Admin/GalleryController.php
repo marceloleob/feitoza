@@ -17,7 +17,7 @@ class GalleryController extends Controller
      */
     public function index(Request $request)
     {
-        $params = GalleryService::list($request);
+        $params = GalleryService::list($request->search);
 
         return view('admin.pages.gallery-list')->with($params);
     }

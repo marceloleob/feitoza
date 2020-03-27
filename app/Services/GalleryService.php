@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Gallery;
 use App\Services\BaseService;
+use Illuminate\Support\Str;
 use Exception;
 
 class GalleryService extends BaseService
@@ -15,24 +16,30 @@ class GalleryService extends BaseService
      */
     public static function options()
     {
-        return Gallery::orderBy('name', 'ASC')
+        $options = Gallery::orderBy('name', 'ASC')
             ->where('status', '=', config('constants.ACTIVE'))
-            ->get();
+            ->pluck('name', 'id');
+
+        return $options->prepend(' -- Selecione -- ', '');
     }
 
     /**
-     * Monta a lista com paginacao
+     * Monta a lista com paginacao e busca
      *
+     * @param string $search
      * @return array
      */
-    public static function list($request)
+    public static function list($search)
     {
         // retorna a query para a busca do grid
         $query = Gallery::orderBy('name', 'ASC');
 
         // verifica se buscou algum item especifico
-        if (!empty($request['search'])) {
-            $query->where('name', 'LIKE', '%' . $request['search'] . '%');
+        if (!empty($search)) {
+            // armazena o valor da busca
+            parent::$search = $search;
+            // executa a busca
+            $query->where('name', 'LIKE', '%' . $search . '%');
         }
 
         // cria uma collection com pagination para montar o grid
@@ -42,6 +49,7 @@ class GalleryService extends BaseService
 
         return [
             'data'     => parent::$collection,
+            'search'   => parent::$search,
             'paginate' => parent::$paginate,
         ];
     }
@@ -59,7 +67,7 @@ class GalleryService extends BaseService
             return new Gallery;
         }
 
-        return Gallery::find($id)->first();
+        return Gallery::where('id', $id)->first();
     }
 
     /**
@@ -96,7 +104,7 @@ class GalleryService extends BaseService
     public static function store($data = [])
     {
         try {
-            $data['friendly'] = self::friendly($data['name']);
+            $data['friendly'] = Str::slug($data['name'], '-');
             // save or update
             $entity = Gallery::store($data);
             // retorna a entidade criada ou atualizada

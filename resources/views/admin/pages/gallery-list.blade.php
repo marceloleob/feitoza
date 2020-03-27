@@ -36,9 +36,10 @@
 				<div class="card-header">Lista
 					<div class="btn-actions-pane-right search">
 						<div role="group" class="btn-group-sm btn-group">
-							{!! Form::open(['id' => 'form-search', 'route' => 'gallery.search', 'method' => 'POST', 'role' => 'group']) !!}
+                            {!! Form::open(['id' => 'form-search', 'route' => 'gallery.search', 'method' => 'POST', 'role' => 'group']) !!}
+                                @csrf
 								<div class="custom-control custom-control-inline input-group">
-									{!! Form::text('search', old('search'), ['class' => 'form-control', 'placeholder' => 'Procurar por nome']) !!}
+									{!! Form::text('search', ($search ?? ''), ['class' => 'form-control', 'placeholder' => 'Procurar por nome']) !!}
 									<div class="input-group-append mr-2">
 										{!! Form::button('<i class="fas fa-search pr-2 pl-2"></i>', ['type' => 'submit', 'class' => 'btn btn-focus']) !!}
 									</div>

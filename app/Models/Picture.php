@@ -21,7 +21,7 @@ class Picture extends Base
 	protected $fillable = [
 		'id',
 		'gallery_id',
-		'name',
+		'photo',
 		'extension',
 		'size',
 		'position',

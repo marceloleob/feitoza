@@ -46,7 +46,8 @@
 	<div class="col-md-12">
 		<div class="main-card mb-3 card">
 			<div class="card-body"><h5 class="card-title">Preencha o formulário</h5>
-				{!! Form::open(['id' => 'form-gallery', 'route' => 'review.store', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
+                {!! Form::open(['id' => 'form-gallery', 'route' => 'review.store', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
+                    @csrf
 					<div class="position-relative form-group">
 						{!! Form::label('name', 'Nome da pessoa') !!}
 						{!! Form::text('name', old('name', $data->name), ['class' => 'form-control text']) !!}

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\PictureRequest;
+use App\Services\GalleryService;
 use App\Services\PictureService;
 use Illuminate\Http\Request;
 
@@ -11,12 +13,12 @@ class PictureController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return Response
      */
     public function index(Request $request)
     {
-        $params = PictureService::list($request);
+        $params = PictureService::list($request->search);
 
         return view('admin.pages.picture-list')->with($params);
     }
@@ -24,57 +26,55 @@ class PictureController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
         $params = [
             'data'    => PictureService::find(),
-            'options' => PictureService::options()
+            'options' => GalleryService::options()
         ];
 
         return view('admin.pages.picture-form')->with($params);
     }
 
     /**
-     * Display the specified resource.
+     * Store a newly created resource in storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  PictureRequest  $request
+     * @return Response
      */
-    public function show($id)
+    public function store(PictureRequest $request)
     {
-        //
+        // sanitized and validated data
+        $request->validated();
+        // save or update
+        $response = PictureService::store($request);
+
+        return redirect()->route('picture.list')->with($response);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($id)
     {
-        //
-    }
+        $params = [
+            'data'    => PictureService::find($id),
+            'options' => GalleryService::options()
+        ];
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        return view('admin.pages.picture-form')->with($params);
     }
 
     /**
      * Toggle the status storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function toggle($id)
     {

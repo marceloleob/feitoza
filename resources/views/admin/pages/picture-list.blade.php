@@ -36,9 +36,10 @@
 				<div class="card-header">Lista
 					<div class="btn-actions-pane-right search">
 						<div role="group" class="btn-group-sm btn-group">
-							{!! Form::open(['id' => 'form-search', 'route' => 'picture.search', 'method' => 'POST', 'role' => 'group']) !!}
+                            {!! Form::open(['id' => 'form-search', 'route' => 'picture.search', 'method' => 'POST', 'role' => 'group']) !!}
+                                @csrf
 								<div class="custom-control custom-control-inline input-group">
-									{!! Form::text('search', old('search'), ['class' => 'form-control', 'placeholder' => 'Procurar por categoria']) !!}
+									{!! Form::text('search', ($search ?? ''), ['class' => 'form-control', 'placeholder' => 'Procurar por categoria']) !!}
 									<div class="input-group-append mr-2">
 										{!! Form::button('<i class="fas fa-search pr-2 pl-2"></i>', ['type' => 'submit', 'class' => 'btn btn-focus']) !!}
 									</div>
@@ -53,8 +54,8 @@
 						<thead>
 							<tr>
 								<th width="10%" class="text-center"><b>Código</b></th>
-								<th width="15%" class="text-left"><b>Galeria</b></th>
-								<th width="45%" class="text-left"><b>Imagem</b></th>
+								<th width="20%" class="text-center"><b>Galeria</b></th>
+								<th width="40%" class="text-left"><b>Imagem</b></th>
 								<th width="15%" class="text-center"><b>Status</b></th>
 								<th width="15%" class="text-center"><b>Ações</b></th>
 							</tr>
@@ -64,7 +65,9 @@
 							<tr>
                                 <td class="text-center text-muted">{!! $item->id !!}</td>
                                 <td class="text-left">{!! $item->gallery->name !!}</td>
-								<td class="text-left">{!! $item->name !!}</td>
+								<td class="text-left">
+                                    <img src="{!! url('storage/' . $item->photo) !!}" alt="" style="width: 100px">
+                                </td>
 								<td class="text-center"><div id="div-{!! $item->id !!}" class="div-{!! $item->id !!} badge badge-{!! $item->status['class'] !!}">{!! $item->status['label'] !!}</div></td>
                                 <td class="text-center">
                                     <a href="{!! route('picture.edit', $item->id) !!}" class="btn btn-primary btn-sm">Editar</a>

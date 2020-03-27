@@ -50,7 +50,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     // Galleries
     Route::get('galleries', 'GalleryController@index')->name('gallery.list');
-    Route::post('galleries', 'GalleryController@index')->name('gallery.search');
+    Route::any('galleries', 'GalleryController@index')->name('gallery.search');
     Route::get('new-gallery', 'GalleryController@create')->name('gallery.new');
     Route::post('gallery', 'GalleryController@store')->name('gallery.store');
     Route::get('gallery/{id}', 'GalleryController@edit')->name('gallery.edit');
@@ -58,7 +58,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     // Pictures
     Route::get('pictures', 'PictureController@index')->name('picture.list');
-    Route::post('pictures', 'PictureController@index')->name('picture.search');
+    Route::any('pictures', 'PictureController@index')->name('picture.search');
     Route::get('new-picture', 'PictureController@create')->name('picture.new');
     Route::post('picture', 'PictureController@store')->name('picture.store');
     Route::get('picture/{id?}', 'PictureController@edit')->name('picture.edit');
@@ -81,7 +81,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     // Reviews List
     Route::get('reviews', 'ReviewController@index')->name('review.list');
-    Route::post('reviews', 'ReviewController@index')->name('review.search');
+    Route::any('reviews', 'ReviewController@index')->name('review.search');
     Route::get('new-review', 'ReviewController@create')->name('review.new');
     Route::post('review', 'ReviewController@store')->name('review.store');
     Route::get('review/{id?}', 'ReviewController@edit')->name('review.edit');

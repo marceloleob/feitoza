@@ -16,7 +16,7 @@ class CreatePicturesTable extends Migration
         Schema::create('pictures', function (Blueprint $table) {
             $table->id();
             $table->foreignId('gallery_id');
-            $table->string('name', 100);
+            $table->string('photo', 100);
             $table->string('extension', 5);
             $table->decimal('size', 7, 2);
             $table->enum('position', ['V', 'H']);

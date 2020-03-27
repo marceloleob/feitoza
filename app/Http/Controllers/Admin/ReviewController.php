@@ -17,7 +17,7 @@ class ReviewController extends Controller
      */
     public function index(Request $request)
     {
-        $params = ReviewService::list($request);
+        $params = ReviewService::list($request->search);
 
         return view('admin.pages.review-list')->with($params);
     }
