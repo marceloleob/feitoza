@@ -28,11 +28,17 @@
 	{!! Html::style('css/libs/bootstrap.min.css') !!}
 	{!! Html::style('vendor/fontawesome-free/css/all.min.css') !!}
 	{!! Html::style('vendor/flaticon/all.css') !!}
-	{!! Html::style('vendor/owl-carousel/dist/assets/owl.carousel.min.css') !!}
+    {!! Html::style('vendor/owl-carousel/dist/assets/owl.carousel.min.css') !!}
 	{{-- Google APIs - Fonts --}}
 	{!! Html::style('vendor/font/google-latin-ext.css') !!}
     {{-- CSS CUSTOM --}}
+    {!! Html::style('css/site/responsive.css') !!}
     {!! Html::style('css/site/main.css') !!}
     {!! Html::style('css/forms.css') !!}
+    {{-- CSS DEVICE --}}
+	@if (!empty($device))
+		{!! Html::style('css/site/' . $device . '/main.css') !!}
+    @endif
+    {{-- CSS PAGE --}}
     @yield('css-custom')
 </head>

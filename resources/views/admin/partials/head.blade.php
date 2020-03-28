@@ -24,10 +24,6 @@
 	{!! Html::style('https://fonts.googleapis.com/css?family=Nunito') !!}
 	{{-- CSS LIBS --}}
 	{!! Html::style('vendor/fontawesome-free/css/all.min.css') !!}
-	{{-- {!! Html::style('vendor/metismenu/metisMenu.min.css') !!} --}}
-	{{-- {!! Html::style('css/admin/animate.css') !!} --}}
-	{{-- {!! Html::style('css/admin/hamburger.css') !!} --}}
-	{{-- {!! Html::style('css/admin/architect-ui.css') !!} --}}
 	{!! Html::style('css/admin/architect-ui.min.css') !!}
 	{{-- CSS CUSTOM --}}
 	{!! Html::style('css/admin/custom.css') !!}

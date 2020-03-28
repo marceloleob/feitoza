@@ -3,7 +3,10 @@
 @section('title-page', 'About Us')
 
 @section('css-custom')
-{!! Html::style('css/site/pages/about.css') !!}
+    {!! Html::style('css/site/pages/about.css') !!}
+	@if (!empty($device))
+		{!! Html::style('css/site/' . $device . '/about.css') !!}
+	@endif
 @stop
 
 @section('content')
