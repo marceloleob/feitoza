@@ -104,7 +104,8 @@ class GalleryService extends BaseService
     public static function store($data = [])
     {
         try {
-            $data['friendly'] = Str::slug($data['name'], '-');
+            // cria um link amigavel
+            $data['friendly'] = strtolower(Str::slug($data['name'], '-'));
             // save or update
             $entity = Gallery::store($data);
             // retorna a entidade criada ou atualizada

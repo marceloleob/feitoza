@@ -81,3 +81,12 @@
     line-height: 1.7em;
     font-family: 'Lato', sans-serif;
 }
+
+.review-page-section .review-block .inner-box .content .link {
+    position: relative;
+    color: #2760ca;
+    font-size: 15px;
+    line-height: 1.7em;
+    font-family: 'Lato', sans-serif;
+    padding-top: 10px;
+}

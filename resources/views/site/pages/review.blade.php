@@ -25,14 +25,16 @@
 										{{-- Reviews Block --}}
 										@foreach ($reviews as $review)
 										<div id="{!! $review->id !!}" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<div id="" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<div class="inner-box">
 												<div class="content">
 													<div class="left-box">
 														<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
 													</div>
 													<h3>{!! $review->name !!}</h3>
-													<div class="text">{!! $review->text !!}</div>
+                                                    <div class="text">{!! $review->text !!}</div>
+                                                    <div class="link">
+                                                        <a href="{!! $review->link !!}" target="_blank">{!! $review->link !!}</a>
+                                                    </div>
 												</div>
 											</div>
 										</div>

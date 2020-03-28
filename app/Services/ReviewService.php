@@ -127,7 +127,7 @@ class ReviewService extends BaseService
     public static function randReviews()
     {
         // retorna a query para a busca do grid
-        return Review::select('id', 'name', 'text')
+        return Review::select('id', 'name', 'link', 'text')
             ->where('status', config('constants.ACTIVE'))
             ->inRandomOrder()
             ->get();
