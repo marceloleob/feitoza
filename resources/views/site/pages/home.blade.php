@@ -67,7 +67,8 @@
 	</section>
 	{{-- End Welcome Section --}}
 
-	{{-- Offer Section --}}
+    {{-- Offer Section --}}
+    @if (count($gallery))
 	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
@@ -104,11 +105,12 @@
 				</div>
 			</div>
 		</div>
-	</section>
+    </section>
+    @endif
 	{{-- End Offer Section --}}
 
 	{{-- Reviews Section --}}
-	{{-- @if (count($reviews)) --}}
+	@if (count($reviews) > 1)
 	<section class="row">
 		<div class="row-container">
 			<div class="wrap-columns">
@@ -158,7 +160,7 @@
 			</div>
 		</div>
 	</section>
-	{{-- @endif --}}
+	@endif
 	{{-- End review Section --}}
 
 	{{-- Sponsors Section --}}

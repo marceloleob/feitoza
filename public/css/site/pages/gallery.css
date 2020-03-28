@@ -43,10 +43,10 @@
 	text-decoration: underline;
 }
 
-.review-page-section .no-gallery {
-    text-align: center;
-    font-size: 20px;
-    padding: 10px 0 65px;
+.gallery-classic-section .no-gallery {
+	text-align: center;
+	font-size: 20px;
+	padding: 150px 0;
 }
 
 /***

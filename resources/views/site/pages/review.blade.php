@@ -16,12 +16,12 @@
 						{{-- Reviews Section --}}
 						<section class="review-page-section">
 							<div class="auto-container">
-								<div class="sec-title">
-									<h2>What our customers says</h2>
-								</div>
-								<div class="styled-text">These are some of the reviews we received on other media, to confirm just click on the reference link to the text.</div>
-								<div class="row clearfix">
-									@if (count($reviews))
+                                @if (count($reviews))
+                                    <div class="sec-title">
+                                        <h2>What our customers says</h2>
+                                    </div>
+                                    <div class="styled-text">These are some of the reviews we received on other media, to confirm just click on the reference link to the text.</div>
+                                    <div class="row clearfix">
 										{{-- Reviews Block --}}
 										@foreach ($reviews as $review)
 										<div id="{!! $review->id !!}" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -38,10 +38,10 @@
 										</div>
 										@endforeach
 										{{-- Reviews Block --}}
-									@else
-										<div class="no-review">There is no review yet.</div>
-									@endif
-								</div>
+                                    </div>
+                                @else
+                                    <div class="no-review">There is no review yet.</div>
+                                @endif
 							</div>
 						</section>
 						{{-- End Reviews Section --}}
