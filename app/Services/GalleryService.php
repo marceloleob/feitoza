@@ -29,7 +29,7 @@ class GalleryService extends BaseService
      * @param string $search
      * @return array
      */
-    public static function list($search)
+    public static function list($search = '')
     {
         // retorna a query para a busca do grid
         $query = Gallery::orderBy('name', 'ASC');
@@ -122,13 +122,15 @@ class GalleryService extends BaseService
     }
 
     /**
-     * Hidrata o campo name para transforma-lo em friendly name
+     * Pega todas as galerias
      *
-     * @param string $name
-     * @return string
+     * @return Gallery
      */
-    public static function friendly($name)
+    public static function getAll()
     {
-        return strtolower(str_replace(' ', '-', str_replace('  ', ' ', preg_replace("/[^A-Za-z ]/", '', $name))));
+        // retorna a query para a busca do grid
+        return Gallery::select('id', 'name', 'friendly')
+            ->where('status', config('constants.ACTIVE'))
+            ->get();
     }
 }

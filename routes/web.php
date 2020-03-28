@@ -31,7 +31,7 @@ Route::group(['namespace' => 'Site'], function () {
     // Home
     Route::get('/', 'HomeController@index')->name('home');
     // Gallery
-    Route::get('gallery', 'GalleryController@index')->name('gallery');
+    Route::get('gallery/{slug?}', 'GalleryController@index')->name('gallery');
     // reviews
     Route::get('reviews', 'ReviewController@index')->name('review');
     // About Us
@@ -47,7 +47,6 @@ Route::group(['namespace' => 'Site'], function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     // Home
     Route::get('/', 'DashboardController@index')->name('dashboard');
-
     // Galleries
     Route::get('galleries', 'GalleryController@index')->name('gallery.list');
     Route::any('galleries', 'GalleryController@index')->name('gallery.search');
@@ -55,7 +54,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('gallery', 'GalleryController@store')->name('gallery.store');
     Route::get('gallery/{id}', 'GalleryController@edit')->name('gallery.edit');
     Route::get('gallery/toggle/{id?}', 'GalleryController@toggle')->name('gallery.toggle');
-
     // Pictures
     Route::get('pictures', 'PictureController@index')->name('picture.list');
     Route::any('pictures', 'PictureController@index')->name('picture.search');
@@ -63,22 +61,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('picture', 'PictureController@store')->name('picture.store');
     Route::get('picture/{id?}', 'PictureController@edit')->name('picture.edit');
     Route::get('picture/toggle/{id?}', 'PictureController@toggle')->name('picture.toggle');
-
-    // // List Pictures by Gallery
-    // Route::get('gallery/services', 'PicturesController@index')->name('gallery.services');
-    // // Form Create new Picture
-    // Route::get('gallery/picture/new', 'PicturesController@create')->name('gallery.service.new');
-    // // Form Create or Edit of expecific Service
-    // Route::get('gallery/service/{service?}', 'PicturesController@create')->name('gallery.service.edit');
-    // // Form Edit of expecific Picture by Service
-    // Route::get('gallery/service/{service?}/picture/{picture?}', 'PicturesController@create')->name('gallery.picture.edit');
-    // // Post Form
-    // Route::post('gallery/picture', 'PicturesController@store')->name('gallery.picture.store');
-    // // Delete
-    // Route::get('gallery/service/{service?}/picture/{picture?}/delete', 'PicturesController@destroy')->name('gallery.picture.destroy');
-    // // Form Update ShowHome
-    // Route::get('gallery/service/{service?}/picture/{picture?}/showhome/{showhome?}', 'PicturesController@showHome')->name('gallery.picture.showhome');
-
     // Reviews List
     Route::get('reviews', 'ReviewController@index')->name('review.list');
     Route::any('reviews', 'ReviewController@index')->name('review.search');

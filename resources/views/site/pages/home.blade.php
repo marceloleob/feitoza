@@ -78,79 +78,24 @@
 							<div class="auto-container">
 								<div class="sec-title">
 									<h2>Image Gallery</h2>
-									{{--<div class="text">Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards</div>--}}
+									<div class="text">These are some of the photos from our gallery.</div>
 								</div>
 								<div class="row clearfix">
-									{{-- Services Block Four --}}
-									{{-- @foreach ($services as $service) --}}
+									{{-- Pictures Block Four --}}
+									@foreach ($gallery as $picture)
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! asset('images/gallery/02.jpg') !!}" alt="" width="370" height="278" />
+													<img src="{!! url('storage/' . $picture->photo) !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
-														<a href="#" class="theme-btn detail-btn">View Details</a>
+														<a href="{!! route('gallery', $picture->friendly) !!}" class="theme-btn detail-btn">View Details</a>
 													</div>
 												</div>
-												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
+												<div class="lower-content"><h3><a href="{!! route('gallery', $picture->friendly) !!}">{!! $picture->name !!}</a></h3></div>
 											</div>
-										</div>
-										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
-											<div class="inner-box">
-												<div class="image">
-													<img src="{!! asset('images/gallery/09.jpg') !!}" alt="" width="370" height="278" />
-													<div class="overlay-box">
-														<a href="#" class="theme-btn detail-btn">View Details</a>
-													</div>
-												</div>
-												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
-											</div>
-										</div>
-										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
-											<div class="inner-box">
-												<div class="image">
-													<img src="{!! asset('images/gallery/04.jpg') !!}" alt="" width="370" height="278" />
-													<div class="overlay-box">
-														<a href="#" class="theme-btn detail-btn">View Details</a>
-													</div>
-												</div>
-												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
-											</div>
-										</div>
-										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
-											<div class="inner-box">
-												<div class="image">
-													<img src="{!! asset('images/gallery/08.jpg') !!}" alt="" width="370" height="278" />
-													<div class="overlay-box">
-														<a href="#" class="theme-btn detail-btn">View Details</a>
-													</div>
-												</div>
-												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
-											</div>
-										</div>
-										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
-											<div class="inner-box">
-												<div class="image">
-													<img src="{!! asset('images/gallery/06.jpg') !!}" alt="" width="370" height="278" />
-													<div class="overlay-box">
-														<a href="#" class="theme-btn detail-btn">View Details</a>
-													</div>
-												</div>
-												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
-											</div>
-										</div>
-										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
-											<div class="inner-box">
-												<div class="image">
-													<img src="{!! asset('images/gallery/07.jpg') !!}" alt="" width="370" height="278" />
-													<div class="overlay-box">
-														<a href="#" class="theme-btn detail-btn">View Details</a>
-													</div>
-												</div>
-												<div class="lower-content"><h3><a href="#">Name</a></h3></div>
-											</div>
-										</div>
-									{{-- @endforeach --}}
-									{{-- End Services Block Four --}}
+                                        </div>
+									@endforeach
+									{{-- End Pictures Block Four --}}
 								</div>
 							</div>
 						</section>
@@ -181,7 +126,7 @@
 									<div class="owl-stage-outer">
 										<div class="owl-stage">
 											{{-- Reviews Box --}}
-											{{-- @foreach ($reviews as $review) --}}
+											@foreach ($reviews as $review)
 												<div class="owl-item">
 													<div class="review-block">
 														<div class="inner-box">
@@ -189,52 +134,21 @@
 																<div class="left-box">
 																	<div class="quote-icon"><i class="icon fas fa-quote-left"></i></div>
 																</div>
-																<h3>Marcelo Leopold</h3>
-																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
-                                                                quam id dui posuere blandit.,</div>
-																<div class="readmore"><a href="#">read more</a></div>
+																<h3>{!! $review->name !!}</h3>
+																<div class="text">{!! Str::limit($review->text, 160, '...') !!}</div>
+																<div class="readmore"><a href="{!! url('reviews#' . $review->id) !!}">read more</a></div>
 															</div>
 														</div>
 													</div>
 												</div>
-												<div class="owl-item">
-													<div class="review-block">
-														<div class="inner-box">
-															<div class="content">
-																<div class="left-box">
-																	<div class="quote-icon"><i class="icon fas fa-quote-left"></i></div>
-																</div>
-																<h3>Paulo Feitoza</h3>
-																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
-                                                                quam id dui posuere blandit.,</div>
-																<div class="readmore"><a href="#">read more</a></div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="owl-item">
-													<div class="review-block">
-														<div class="inner-box">
-															<div class="content">
-																<div class="left-box">
-																	<div class="quote-icon"><i class="icon fas fa-quote-left"></i></div>
-																</div>
-																<h3>Fulano Silva</h3>
-																<div class="text">Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet
-                                                                quam id dui posuere blandit.,</div>
-																<div class="readmore"><a href="#">read more</a></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											{{-- @endforeach --}}
+											@endforeach
 											{{-- Reviews Box --}}
 										</div>
 									</div>
 								</div>
 								{{-- End Reviews Carousel --}}
 								<div class="footer-box">
-									<h2><a href="{!! url('review') !!}">See all reviews</a></h2>
+									<h2><a href="{!! route('review') !!}">See all reviews</a></h2>
 								</div>
 							</div>
 						</section>

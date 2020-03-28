@@ -28,7 +28,7 @@ class ReviewService extends BaseService
      * @param string $search
      * @return array
      */
-    public static function list($search)
+    public static function list($search = '')
     {
         // retorna a query para a busca do grid
         $query = Review::orderBy('name', 'ASC');
@@ -117,5 +117,19 @@ class ReviewService extends BaseService
                 'error'  => $exception,
             ];
         }
+    }
+
+    /**
+     * Pega os reviews randomicamente
+     *
+     * @return Review
+     */
+    public static function randReviews()
+    {
+        // retorna a query para a busca do grid
+        return Review::select('id', 'name', 'text')
+            ->where('status', config('constants.ACTIVE'))
+            ->inRandomOrder()
+            ->get();
     }
 }

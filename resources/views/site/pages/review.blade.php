@@ -16,40 +16,31 @@
 						{{-- Reviews Section --}}
 						<section class="review-page-section">
 							<div class="auto-container">
-								{{--
 								<div class="sec-title">
 									<h2>What our customers says</h2>
 								</div>
-								<div class="styled-text">Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
-								--}}
+								<div class="styled-text">These are some of the reviews we received on other media, to confirm just click on the reference link to the text.</div>
 								<div class="row clearfix">
-									{{-- @if (count($reviews)) --}}
+									@if (count($reviews))
 										{{-- Reviews Block --}}
-										{{-- @foreach ($reviews as $review) --}}
-										{{-- <div id="{!! $review->id !!}" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12"> --}}
+										@foreach ($reviews as $review)
+										<div id="{!! $review->id !!}" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div id="" class="review-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
 											<div class="inner-box">
 												<div class="content">
 													<div class="left-box">
 														<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
 													</div>
-													{{-- <h3>{!! $review->name !!}</h3> --}}
-													{{-- <div class="text">{!! $review->text !!}</div> --}}
-													<h3>Marcelo Leopold</h3>
-													<div class="text">Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus suscipit
-                                                    tortor eget felis porttitor volutpat. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta
-                                                    dapibus. Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ante
-                                                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel,
-                                                    ullamcorper sit amet ligula. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis
-                                                    ac lectus.</div>
+													<h3>{!! $review->name !!}</h3>
+													<div class="text">{!! $review->text !!}</div>
 												</div>
 											</div>
 										</div>
-										{{-- @endforeach --}}
+										@endforeach
 										{{-- Reviews Block --}}
-									{{-- @else
-										<div class="no-review">There is no review yes.</div>
-									@endif --}}
+									@else
+										<div class="no-review">There is no review yet.</div>
+									@endif
 								</div>
 							</div>
 						</section>

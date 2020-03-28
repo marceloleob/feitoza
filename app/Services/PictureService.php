@@ -28,7 +28,7 @@ class PictureService extends BaseService
 	 * @param string $search
 	 * @return array
 	 */
-	public static function list($search)
+	public static function list($search = '')
 	{
 		// retorna a query para a busca do grid
         $query = Picture::join('galleries', 'pictures.gallery_id', '=', 'galleries.id')
@@ -159,5 +159,27 @@ class PictureService extends BaseService
 
         // salva e retorna o nome da imagem
         return $data;
+    }
+
+    /**
+     * Pega 6 imagens randomicamente
+     *
+     * @param int $limit
+     * @return Picture
+     */
+    public static function randImages($limit = null)
+    {
+        // retorna a query para a busca do grid
+        $query = Picture::join('galleries', 'pictures.gallery_id', '=', 'galleries.id')
+            ->select('pictures.photo', 'galleries.name', 'galleries.friendly')
+            ->where('pictures.status', config('constants.ACTIVE'))
+            ->inRandomOrder()
+            ->get();
+
+        if (!empty($limit)) {
+            $query->take($limit);
+        }
+
+        return $query;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Services\ReviewService;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -14,6 +15,11 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        return view('site.pages.review')->with(['current' => 'review']);
+        $params = [
+            'current' => 'review',
+            'reviews' => ReviewService::randReviews(),
+        ];
+
+        return view('site.pages.review')->with($params);
     }
 }

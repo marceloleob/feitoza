@@ -6,8 +6,8 @@
 ***/
 
 .gallery-classic-section {
-	position:relative;
-	padding:90px 0px 70px;
+	position: relative;
+	padding: 70px 0px 30px;
 }
 
 .gallery-classic-section .filters {
@@ -43,6 +43,12 @@
 	text-decoration: underline;
 }
 
+.review-page-section .no-gallery {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0 65px;
+}
+
 /***
 ====================================================================
 	Gallery Classic Section
@@ -71,6 +77,8 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 20px;
 }
 
 .gallery-list .gallery-item .image-box {

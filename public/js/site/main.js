@@ -1,6 +1,5 @@
 $(document).ready(function ()
 {
-
 	/**
 	 * Carrega os sliders
 	 */
@@ -155,7 +154,19 @@ $(document).ready(function ()
                 effects: 'fade translateZ(-100px)'
             }
         });
-	}
+    }
+
+	/**
+	 * LightBox / Fancybox
+	 */
+	if ($('#lightgallery').length) {
+
+	    $("#lightgallery").lightGallery({
+	        thumbnail: true,
+	        animateThumb: true,
+	        showThumbByDefault: true
+	    });
+    }
 
 	/**
 	 * Metodo que controla o botao de scroll
