@@ -16,7 +16,7 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->string('link', 255);
+            $table->string('link', 800);
             $table->text('text');
             $table->boolean('status')->default(1);
         });
