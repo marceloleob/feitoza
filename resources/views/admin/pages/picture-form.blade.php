@@ -34,6 +34,13 @@
 
 <div class="row">
 	<div class="col-md-12">
+        <div class="alert alert-info">
+		    <i class="fas fa-info-circle"></i> &nbsp; Não esqueça de <b><a href="https://cloudconvert.com/heic-to-jpg" target="_blank">converter</a></b> as fotos para JPG antes de enviar!
+	    </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
 		{!! Form::boxNotification($errors) !!}
 	</div>
 </div>

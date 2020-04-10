@@ -68,7 +68,7 @@ class Macros extends FormBuilder
             // verifica  se existe algum tipo na sessao
             if (Session::has($type)) {
                 // recupera o tipo
-                array_push($alerts, '<div class="feedback alert alert-' . $type . ' fade in">');
+                array_push($alerts, '<div class="feedback alert alert-' . $type . '">');
                 array_push($alerts, '    <i class="fas ' . $ico . '"></i> &nbsp; ' . Session::get($type));
                 array_push($alerts, '    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>');
                 array_push($alerts, '</div>');

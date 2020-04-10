@@ -28,14 +28,14 @@ $(document).ready(function ()
     /**
      * Mostra a mensagem de retorno por 4 segundos
      */
-    $('.alert').animate({
+    $('.feedback').animate({
         opacity: 1
     }, 5000).fadeOut('slow');
 
     /**
      * Fecha a mensagem caso seja clicada
      */
-    $('.alert .close').click(function (e) {
+    $('.feedback .close').click(function (e) {
         e.preventDefault();
         $(this).parent().parent().fadeOut('slow');
         return false;
