@@ -31,7 +31,7 @@ class PictureRequest extends BaseRequest
     public static $filters = [
         'id'         => 'digit',
         'gallery_id' => 'digit',
-        'photo'      => 'trim',
+        'photo.*'    => 'trim,lowercase',
     ];
 
     /**
@@ -42,6 +42,6 @@ class PictureRequest extends BaseRequest
     public static $validations = [
         'id'         => 'integer',
         'gallery_id' => 'required|integer',
-        'photo'      => 'image|mimes:jpeg,png,jpg|max:5000', // 2,000 KILOBYTES = 2 MEGABYTES
+        'photo.*'    => 'required|image|mimes:jpeg,png,jpg|max:3000', // 3 MEGABYTES
     ];
 }

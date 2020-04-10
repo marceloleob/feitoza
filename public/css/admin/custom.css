@@ -59,7 +59,7 @@ CUSTOMS
     max-width: 80px;
     max-height: 80px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
 .form img.photo {

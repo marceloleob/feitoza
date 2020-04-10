@@ -42,9 +42,11 @@
 											</div>
 											<div class="styled-text">Is a full-service wallpapers services company.</div>
 											<div class="text">
-                                                We specialize in interior projects of all sizes.
-                                                We have been working in the Boston area <br /> for over five years and want to bring our high expertise to your new home or office. <br />
-                                                Feitoza Wallpapers Decor takes pride in attention to detail, high-quality, and timely work.
+                                                {!! Config::get('app.name') !!} and surrounding Middlesex counties, are committed providing our clients with the finest quality wallpaper installation service in home and business. <br />
+                                                Our experience will help you discover and transform your home or business into the home or business of your dreams.
+                                                We specialize in interior projects of all sizes. <br /> <br />
+                                                We have been working in the Boston area for over five years and want to bring our high expertise to your new home or office.
+                                                {!! Config::get('app.name') !!} takes pride in attention to detail, high-quality, and timely work.
 											</div>
 											<div class="number">Call us for a free estimate <span>(781) 366-8429</span></div>
 										</div>
@@ -87,7 +89,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! url('storage/' . $picture->photo) !!}" alt="" width="370" height="278" />
+													<img src="{!! url($picture->photo) !!}" alt="" width="370" height="278" />
 													<div class="overlay-box">
 														<a href="{!! route('gallery', $picture->friendly) !!}" class="theme-btn detail-btn">View Details</a>
 													</div>

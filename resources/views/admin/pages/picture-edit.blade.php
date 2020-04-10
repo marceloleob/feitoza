@@ -18,7 +18,7 @@
 			</div>
 			<div>
 				Fotos
-				<div class="page-title-subheading">Formulário de fotos das galerias.</div>
+				<div class="page-title-subheading">Formulário para alterar uma foto.</div>
 			</div>
 		</div>
 		<div class="page-title-actions">
@@ -49,14 +49,18 @@
 						{!! Form::select('gallery_id', $options, old('gallery_id', $data->gallery_id), ['class' => 'form-control mdb-select md-form colorful-select dropdown-primary']) !!}
 						{!! Form::notification('gallery_id', $errors) !!}
 					</div>
+					<div class="position-relative form-group text-center">
+						<img src="{!! url('storage/' . $data->photo) !!}" alt="" class="photo" />
+					</div>
 					<div class="position-relative form-group">
 						<label for="photo" class="custom-file-upload btn-primary">
-							<i class="fas fa-cloud-upload-alt"></i> Clique para enviar uma foto
-							{!! Form::file('photo[]', ['id' => 'photo', 'multiple' => true]) !!}
+							<i class="fas fa-cloud-upload-alt"></i> Clique para trocar esta foto
+							{!! Form::file('photo', ['id' => 'photo', 'multiple' => false]) !!}
 						</label>
 						{!! Form::notification('photo', $errors) !!}
 					</div>
 
+                    {!! Form::hidden('id', $data->id, ['id' => 'id']) !!}
 					{!! Form::button('<i class="far fa-save"></i> &nbsp; Salvar', ['type' => 'submit', 'class' => 'btn btn-success mb-2 mr-2']) !!}
 				{!! Form::close() !!}
 			</div>

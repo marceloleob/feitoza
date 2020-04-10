@@ -65,7 +65,7 @@
 							<tr>
                                 <td class="text-center text-muted">{!! $item->id !!}</td>
 								<td class="text-center">
-                                    <img src="{!! url('storage/' . $item->photo) !!}" alt="" class="photo" />
+                                    <img src="{!! url($item->photo) !!}" alt="" class="photo" />
                                 </td>
                                 <td class="text-left">{!! $item->gallery->name !!}</td>
 								<td class="text-center"><div id="div-{!! $item->id !!}" class="div-{!! $item->id !!} badge badge-{!! $item->status['class'] !!}">{!! $item->status['label'] !!}</div></td>

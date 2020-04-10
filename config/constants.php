@@ -20,9 +20,10 @@ return [
     'ACTIVE'                 => 1,
 
     // IMAGES
-    'PICTURES_PATH'          => 'pictures/',
-    'PICTURES_SIZE'          => 2000000, // 2,000,000 BYTES = 2,000 KILOBYTES = 2 MEGABYTES
-    'PICTURES_PATH_MSG'      => '2 MB',
+    'PICTURES_PATH'          => 'storage/gallery/',
+    'PICTURES_SIZE'          => 3072000, // 3 MEGABYTES EM KB
+    'PICTURES_PATH_MSG'      => '3 MB',
+    'PICTURES_LIMIT'         => 30,
     'PICTURES_NOTAVAILABLE'  => 'images/no-available-370x278.png',
 
 ];

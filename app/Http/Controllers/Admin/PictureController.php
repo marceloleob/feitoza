@@ -51,6 +51,12 @@ class PictureController extends Controller
         // save or update
         $response = PictureService::store($request);
 
+        // verifica se retornou erro
+        if (isset($response['error'])) {
+            return back()->withInput()->with($response);
+            //return back()->with($response);
+        }
+
         return redirect()->route('picture.list')->with($response);
     }
 
@@ -67,7 +73,7 @@ class PictureController extends Controller
             'options' => GalleryService::options()
         ];
 
-        return view('admin.pages.picture-form')->with($params);
+        return view('admin.pages.picture-edit')->with($params);
     }
 
     /**

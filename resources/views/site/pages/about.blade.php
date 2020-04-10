@@ -27,14 +27,17 @@
 											<div class="sec-title">
 												<h2>We are Certified Wallpaper Company</h2>
 											</div>
-											{{-- <div class="styled-text">Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div> --}}
+											<div class="styled-text">Whether you have a commercial project or a homeowner you can count on {!! Config::get('app.name') !!} installers to meet your needs.</div>
 											<div class="text">
-                                                <p>{!! Config::get('app.name') !!} has been active with projects of all sizes, working primarily in Houses and Commercial places. </p>
-                                                <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh
-                                                pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ac diam sit amet quam
-                                                vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla
-                                                sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus
-                                                suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Sed porttitor lectus nibh.</p>
+                                                <p>
+                                                    {!! Config::get('app.name') !!} and surrounding Middlesex counties, are committed providing our clients with the finest quality wallpaper installation service in home and business. <br />
+                                                    Our experience will help you discover and transform your home or business into the home or business of your dreams.
+                                                </p>
+                                                <p>
+                                                    Our work ethics and dedication to excellence has established our company as the preferred choice of quality mind clients.
+                                                    Feitoza Wallpaper Decor Hangers  family owned and operated, serving Middlesex county. 
+                                                </p>
+                                                <p>We take great pride in customer care, quality of service and superior workmanship with competitive pricing.</p>
 											</div>
 										</div>
 									</div>

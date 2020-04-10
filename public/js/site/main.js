@@ -164,7 +164,8 @@ $(document).ready(function ()
 	    $("#lightgallery").lightGallery({
 	        thumbnail: true,
 	        animateThumb: true,
-	        showThumbByDefault: true
+            showThumbByDefault: false,
+            download: false,
 	    });
     }
 
