@@ -31,9 +31,9 @@
 														<div class="quote-icon"><span class="icon fa fa-quote-left"></span></div>
 													</div>
 													<h3>{!! $review->name !!}</h3>
-                                                    <div class="text">{!! $review->text !!}</div>
+                                                    <div class="text">{!! nl2br($review->text) !!}</div>
                                                     <div class="link">
-                                                        <a href="{!! $review->link !!}" target="_blank">{!! $review->link !!}</a>
+                                                        <a href="{!! $review->link !!}" target="_blank">Click to see the original post</a>
                                                     </div>
 												</div>
 											</div>

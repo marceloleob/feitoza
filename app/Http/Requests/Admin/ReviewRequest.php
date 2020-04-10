@@ -33,7 +33,7 @@ class ReviewRequest extends BaseRequest
     public static $validations = [
         'id'   => '',
         'name' => 'required|min:3|max:100',
-        'link' => 'required|min:5|max:250',
-        'text' => 'required|min:5|max:2000',
+        'link' => 'required|min:5|max:800',
+        'text' => 'required|min:5|max:5000',
     ];
 }
