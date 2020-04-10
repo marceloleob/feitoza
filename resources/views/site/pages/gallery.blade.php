@@ -48,7 +48,7 @@
 										<div class="gallery-item mix {!! $picture->friendly !!} all col-lg-4 col-md-4 col-sm-6 col-xs-12" data-src="{!! url($picture->photo) !!}">
 											<div class="inner-box">
 												<a href="#">
-													<img src="{!! url($picture->photo) !!}" alt="" class="image-box">
+													<img src="{!! url($picture->photo) !!}" alt="" class="{!! strtolower($picture->position) !!}-picture" />
 												</a>
 											</div>
 										</div>

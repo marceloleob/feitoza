@@ -315,7 +315,7 @@ dd($data);
 	{
 		// retorna a query para a busca do grid
 		$query = Picture::join('galleries', 'pictures.gallery_id', '=', 'galleries.id')
-			->select('pictures.photo', 'galleries.name', 'galleries.friendly')
+			->select('pictures.photo', 'pictures.position', 'galleries.name', 'galleries.friendly')
 			->where('pictures.status', config('constants.ACTIVE'))
 			->inRandomOrder()
 			->get();

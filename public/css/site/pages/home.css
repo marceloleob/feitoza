@@ -183,16 +183,27 @@
 }
 
 .services-block-four .inner-box .image {
-	position: relative;
-    border-bottom: 3px solid #f64e49;
-    height: 281px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    height: 250px;
+    background-color: #d2d6de;
 }
 
 .services-block-four .inner-box .image img {
 	position: relative;
 	display: block;
-	width: 100%;
-	max-height: 278px;
+}
+
+.services-block-four .inner-box .image .v-picture {
+    max-height: 250px;
+    margin-left: 92px;
+}
+
+.services-block-four .inner-box .image .h-picture {
+    max-width: 100%;
 }
 
 .services-block-four .inner-box .image .overlay-box {
