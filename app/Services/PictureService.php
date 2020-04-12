@@ -186,7 +186,7 @@ class PictureService extends BaseService
 				// cria uma instancia da estampa
 				$watermark = Image::make('images/stamp.png');
 				// insere a estampa na foto
-				$photo->insert($watermark, 'bottom', 0, 30);
+				$photo->insert($watermark, 'center');
 				// recupera as dimensoes
 				list($width, $height) = @getimagesize($name);
 				// calcula o novo tamanho fixando a altura em 900px
