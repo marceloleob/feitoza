@@ -20,7 +20,7 @@ return [
     'ACTIVE'                 => 1,
 
     // IMAGES
-    'PICTURES_PATH'          => 'storage/gallery/',
+    'PICTURES_PATH'          => 'gallery/',
     'PICTURES_SIZE'          => 3072000, // 3 MEGABYTES EM KB
     'PICTURES_PATH_MSG'      => '3 MB',
     'PICTURES_LIMIT'         => 30,

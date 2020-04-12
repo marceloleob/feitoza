@@ -89,7 +89,7 @@
 										<div class="services-block-four col-md-4 col-sm-6 col-xs-12">
 											<div class="inner-box">
 												<div class="image">
-													<img src="{!! url($picture->photo) !!}" alt="{!! $picture->name !!}" class="{!! strtolower($picture->position) !!}-picture" />
+													<img src="{!! url('storage/' . $picture->photo) !!}" alt="{!! $picture->name !!}" class="{!! strtolower($picture->position) !!}-picture" />
 													<div class="overlay-box">
 														<a href="{!! route('gallery', $picture->friendly) !!}" class="theme-btn detail-btn">View Details</a>
 													</div>

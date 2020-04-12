@@ -4,9 +4,10 @@ namespace App\Services;
 
 use App\Models\Picture;
 use App\Services\BaseService;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\File\File as SymfonyFile;
 use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\Exception\NotReadableException;
 use Exception;
 
 class PictureService extends BaseService
@@ -99,7 +100,29 @@ class PictureService extends BaseService
 	}
 
 	/**
-	 * Verifica se foi anexado alguma foto
+	 * Pega 6 imagens randomicamente
+	 *
+	 * @param int $limit
+	 * @return Picture
+	 */
+	public static function randImages($limit = null)
+	{
+		// retorna a query para a busca do grid
+		$query = Picture::join('galleries', 'pictures.gallery_id', '=', 'galleries.id')
+			->select('pictures.photo', 'pictures.position', 'galleries.name', 'galleries.friendly')
+			->where('pictures.status', config('constants.ACTIVE'))
+			->inRandomOrder()
+			->get();
+
+		if (!empty($limit)) {
+			$query->take($limit);
+		}
+
+		return $query;
+    }
+
+	/**
+	 * Verifica se foi anexado alguma foto no POST
 	 *
 	 * @param PictureRequest $request
 	 * @return boolean
@@ -130,7 +153,86 @@ class PictureService extends BaseService
 			return false;
 		}
 		return true;
-	}
+    }
+
+    /**
+     * Manipula os dados da imagem, salva no servidor, adiciona estampa e redimensiona a foto
+     *
+     * @param int            $galleryId
+     * @param PictureRequest $file
+     * @return void
+     */
+    public static function saveImage($galleryId, $file)
+    {
+        // verifica se e uma imagem
+        if ($file->isValid() === false) {
+            throw new Exception('Você deve anexar uma imagem válida!', 1);
+        }
+        // recupera os dados da foto
+        $ext  = strtolower($file->getClientOriginalExtension());
+        $name = config('constants.PICTURES_PATH') . substr(md5($file->getClientOriginalName()), 0, 10) . time('His') . '.' . $ext;
+        $size = $file->getSize(); // (BYTES)
+        // armazena os dados no array
+        $data = [
+            'gallery_id' => (int) $galleryId,
+            'photo'      => $name,
+            'extension'  => $ext,
+            'size'       => (int) number_format(($size / 1024), 0, '', ''),
+            'position'   => 'H',
+            'showhome'   => 1
+        ];
+        // verifica o tamanho da foto
+        if ($size > config('constants.PICTURES_SIZE')) {
+            throw new Exception('A foto deve ter no máximo ' . config('constants.PICTURES_PATH_MSG') . '!', 1);
+        }
+
+        // grava o arquivo fisico
+        $send = $file->move('storage/' . config('constants.PICTURES_PATH'), $name);
+        // verifica se salvou a imagem em disco
+        if (!$send instanceof SymfonyFile) {
+            throw new Exception('Erro ao salvar a imagem, por favor tente novamente.', 1);
+        }
+        try {
+            // cria uma instancia da foto para manipular
+            $photo = Image::make('storage/' . $name);
+            // cria uma instancia da estampa
+            $watermark = Image::make('images/stamp.png');
+            // insere a estampa na foto
+            $photo->insert($watermark, 'center');
+            // recupera as dimensoes
+            list($width, $height) = @getimagesize('storage/' . $name);
+            // calcula o novo tamanho fixando a altura em 800px
+            $newHeight = 800;
+            $newWidth  = ($newHeight * $width) / $height;
+            // executa
+            $photo->resize($newWidth, $newHeight)->save('storage/' . $name);
+            // verifica se a foto e H ou V
+            if ($width < $height) {
+                $data['position'] = 'V';
+            }
+            // retorna os dados para salvar no BD
+            return $data;
+
+        } catch (NotReadableException $exception) {
+            throw new Exception('Erro ao localizar a imagem no servidor, por favor tente novamente!', $exception);
+        }
+    }
+
+    /**
+     * Exclui uma foto do servidor
+     *
+     * @param PictureRequest $image
+     * @return void
+     */
+    public static function deleteImage($image)
+    {
+        // verifica se a imagem existe
+        if (Storage::exists($image->photo) === false) {
+            throw new Exception('A foto não foi encontrada no servidor, por favor tente novamente', 1);
+        }
+        // exclui a imagem
+        return Storage::delete($image->photo);
+    }
 
 	/**
 	 * Save the Picture
@@ -148,64 +250,17 @@ class PictureService extends BaseService
 			// verifica se pode adicionar fotos para esta galeria
 			if (self::limitImage($request) === false) {
 				throw new Exception('Você está ultrapassando os limites de fotos para esta galeria!', 1);
-			}
-
+            }
 			// percorretodas as fotos postadas
 			foreach ($request->photo as $file) {
-				// verifica se e uma imagem
-				if ($file->isValid() === false) {
-					throw new Exception('Você deve anexar uma imagem válida!', 1);
-				}
-				// recupera os dados da foto
-				$ext  = strtolower($file->getClientOriginalExtension());
-				$name = config('constants.PICTURES_PATH') . substr(md5($file->getClientOriginalName()), 0, 10) . '.' . $ext;
-				$size = $file->getSize(); // (BYTES)
-				// armazena os dados no array
-				$data = [
-					'gallery_id' => (int) $request->gallery_id,
-					'photo'      => $name,
-					'extension'  => $ext,
-					'size'       => (int) number_format(($size / 1024), 0, '', ''),
-					'position'   => 'H',
-					'showhome'   => 1
-				];
-				// verifica o tamanho da foto
-				if ($size > config('constants.PICTURES_SIZE')) {
-					throw new Exception('A foto deve ter no máximo ' . config('constants.PICTURES_PATH_MSG') . '!', 1);
-				}
-
-				// grava o arquivo fisico
-				$send = $file->move(config('constants.PICTURES_PATH'), $name);
-				// verifica se salvou a imagem em disco
-				if (!$send instanceof SymfonyFile) {
-					throw new Exception('Erro ao salvar a imagem, por favor tente novamente.', 1);
-				}
-
-				// cria uma instancia da foto para manipular
-				$photo = Image::make($name);
-				// cria uma instancia da estampa
-				$watermark = Image::make('images/stamp.png');
-				// insere a estampa na foto
-				$photo->insert($watermark, 'center');
-				// recupera as dimensoes
-				list($width, $height) = @getimagesize($name);
-				// calcula o novo tamanho fixando a altura em 900px
-				$newHeight = 900;
-				$newWidth  = ($newHeight * $width) / $height;
-				// executa
-				$photo->resize($newWidth, $newHeight)->save($name);
-				// verifica se a foto e H ou V
-				if ($width < $height) {
-					$data['position'] = 'V';
-				}
-
+                // manipula as fotos e salva em disco
+                $data = self::saveImage($request->gallery_id, $file);
 				// save or update
 				Picture::store($data);
 			}
-
 			// retorna a entidade criada ou atualizada
 			return [
-				'success' => ((isset($request->id)) ? 'Atualizado' : 'Cadastrado') . ' com sucesso!',
+				'success' => 'A foto foi cadastrada com sucesso!',
 				'entity'  => '',
 			];
 		} catch (Exception $exception) {
@@ -217,18 +272,8 @@ class PictureService extends BaseService
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
 	/**
-	 * Save the Picture
+	 * Update the Picture
 	 *
 	 * @param PictureRequest $request
 	 * @return array
@@ -236,97 +281,64 @@ class PictureService extends BaseService
 	public static function update($request)
 	{
 		try {
-			// verifica se e um cadastro
-			if (isset($request->id)) {
-				// seta os dados
-				$data['id'] = $request->id;
-			}
-			// salva as fotos
-			//$data = self::saveImage($request);
-dd($data);
-			// percorre todas as fotos salvas
-			foreach ($data as $row) {
-				// save or update
-				Picture::store($row);
-			}
+            // recupera a foto que sera alterada
+            $image = Picture::where('id', $request->id)->firstOrFail();
+			// verifica se a galeria nao foi alterada & verifica se tem alguma imagem anexa
+			if ($image->gallery_id === $request->gallery_id && self::hasImage($request) === false) {
+				throw new Exception('Você deve anexar pelo menos uma foto!', 1);
+            }
+            // exclui a foto atual e verifica se deu certo
+            if (self::deleteImage($image) === false) {
+                throw new Exception('Erro ao excluir a foto atual, por favor tente novamente!', 1);
+            }
+            // manipula as fotos e salva em disco
+            $data = self::saveImage($request->gallery_id, $request->photo);
+            // adiciona o indice que sera atualizado
+            $data['id'] = $request->id;
+            // save or update
+            Picture::store($data);
 			// retorna a entidade criada ou atualizada
 			return [
-				'success' => ((isset($request->id)) ? 'Atualizado' : 'Cadastrado') . ' com sucesso!',
+				'success' => 'A foto foi atualizada com sucesso!',
 				'entity'  => '',
 			];
 		} catch (Exception $exception) {
 			// retorna a entidade criada ou atualizada
 			return [
-				'danger' => 'Erro ao ' . (isset($request['id']) ? 'atualizar' : 'cadastrar') . ', tente novamente!',
-				'error'  => $exception,
+				'danger' => $exception->getMessage(),
+				'error'  => true,
 			];
 		}
-	}
+    }
 
-	// /**
-	//  * Salva as fotos postadas
-	//  *
-	//  * @param PictureRequest $request
-	//  * @return array
-	//  */
-	// public static function saveImage($request)
-	// {
-	//     // percorretodas as fotos postadas
-	//     foreach ($request->photo as $key => $file) {
-	//         // verifica se e uma imagem
-	//         if (self::isValid($file) === false) {
-	//             throw new Exception('Você deve anexar uma imagem válida!', 1);
-	//         }
-	//         // recupera os dados da foto
-	//         $ext  = strtolower($file->getClientOriginalExtension());
-	//         $name = config('constants.PICTURES_PATH') . substr(md5($file->getClientOriginalName()), 0, 10) . $ext;
-	//         $size = $file->getSize(); // (BYTES)
-	//         // armazena os dados no array
-	//         $data[$key] = [
-	//             'gallery_id' => $request->gallery_id,
-	//             'photo'      => $name,
-	//             'extension'  => $ext,
-	//             'size'       => (int) number_format(($size / 1024), 0, '', ''),
-	//             'position'   => 'H',
-	//             'showhome'   => 1
-	//         ];
-	//         // verifica o tamanho da foto
-	//         if ($size > config('constants.PICTURES_SIZE')) {
-	//             throw new Exception('A foto deve ter no máximo ' . config('constants.PICTURES_PATH_MSG') . '!', 1);
-	//         }
-	//         // grava o arquivo fisico
-	//         $send = $file->move(config('constants.PICTURES_PATH'), $name);
-	//         // verifica se salvou a imagem em disco
-	//         if (!$send instanceof SymfonyFile) {
-	//             throw new Exception('Erro ao salvar a imagem, por favor tente novamente.', 1);
-	//         }
-	//     }
-	//     // retorna os dados das imagens salvas no diretorio
-	//     return $data;
-	// }
-
-	/**
-	 * Pega 6 imagens randomicamente
-	 *
-	 * @param int $limit
-	 * @return Picture
-	 */
-	public static function randImages($limit = null)
-	{
-		// retorna a query para a busca do grid
-		$query = Picture::join('galleries', 'pictures.gallery_id', '=', 'galleries.id')
-			->select('pictures.photo', 'pictures.position', 'galleries.name', 'galleries.friendly')
-			->where('pictures.status', config('constants.ACTIVE'))
-			->inRandomOrder()
-			->get();
-
-		if (!empty($limit)) {
-			$query->take($limit);
+    /**
+     * Exclui uma foto do BD e do servidor
+     *
+     * @param int $id
+     * @return void
+     */
+    public static function delete($id)
+    {
+		try {
+            // recupera a foto que sera excluida
+            $photo = Picture::where('id', $id)->firstOrFail();
+            // exclui a foto atual e verifica se deu certo
+            if (self::deleteImage($photo) === false) {
+                throw new Exception('Erro ao excluir a foto, por favor tente novamente!', 1);
+            }
+            // exclui a foto do BD
+            $photo->delete();
+			// retorna a entidade criada ou atualizada
+			return [
+				'success' => 'A foto foi excluída com sucesso!',
+				'entity'  => '',
+			];
+		} catch (Exception $exception) {
+			// retorna a entidade criada ou atualizada
+			return [
+				'danger' => $exception->getMessage(),
+				'error'  => true,
+			];
 		}
-
-		return $query;
-	}
-
-
-
+    }
 }

@@ -93,11 +93,11 @@ class BaseService
 			if ($array->status == config('constants.ACTIVE')) {
                 // seta ativo como default
                 $array->status = ['class' => 'success', 'label' => 'Ativo'];
-                $array->trash  = ['class' => 'btn-outline-danger', 'label' => 'fa-trash-alt'];
+                $array->trash  = ['class' => 'btn-outline-danger', 'label' => 'fa-recycle'];
 			} else {
                 // seta inativo como default
 				$array->status = ['class' => 'danger', 'label' => 'Inativo'];
-				$array->trash  = ['class' => 'btn-outline-success', 'label' => 'fa-check'];
+				$array->trash  = ['class' => 'btn-outline-success', 'label' => 'fa-recycle'];
             }
 		});
 	}

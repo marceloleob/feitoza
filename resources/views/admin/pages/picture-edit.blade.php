@@ -42,7 +42,7 @@
 	<div class="col-md-12">
 		<div class="main-card mb-3 card">
 			<div class="card-body"><h5 class="card-title">Preencha o formulário</h5>
-				{!! Form::open(['id' => 'form-picture', 'route' => 'picture.store', 'method' => 'POST', 'role' => 'form', 'class' => 'form', 'files' => true]) !!}
+				{!! Form::open(['id' => 'form-picture', 'route' => 'picture.update', 'method' => 'POST', 'role' => 'form', 'class' => 'form', 'files' => true]) !!}
 					@csrf
 					<div class="position-relative form-group">
 						{!! Form::label('gallery_id', 'Galeria') !!}
@@ -61,6 +61,7 @@
 					</div>
 
                     {!! Form::hidden('id', $data->id, ['id' => 'id']) !!}
+                    <a href="{!! route('picture.delete', $data->id) !!}" class="btn btn-danger mb-2 mr-2"><i class="fas fa-trash-alt"></i> &nbsp; Excluir</a>
 					{!! Form::button('<i class="far fa-save"></i> &nbsp; Salvar', ['type' => 'submit', 'class' => 'btn btn-success mb-2 mr-2']) !!}
 				{!! Form::close() !!}
 			</div>

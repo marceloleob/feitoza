@@ -39,28 +39,6 @@ class PictureController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  PictureRequest  $request
-     * @return Response
-     */
-    public function store(PictureRequest $request)
-    {
-        // sanitized and validated data
-        $request->validated();
-        // save or update
-        $response = PictureService::store($request);
-
-        // verifica se retornou erro
-        if (isset($response['error'])) {
-            return back()->withInput()->with($response);
-            //return back()->with($response);
-        }
-
-        return redirect()->route('picture.list')->with($response);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -74,6 +52,67 @@ class PictureController extends Controller
         ];
 
         return view('admin.pages.picture-edit')->with($params);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  PictureRequest  $request
+     * @return Response
+     */
+    public function store(PictureRequest $request)
+    {
+        // sanitized and validated data
+        $request->validated();
+        // save
+        $response = PictureService::store($request);
+
+        // verifica se retornou erro
+        if (isset($response['error'])) {
+            return back()->withInput()->with($response);
+        }
+
+        return redirect()->route('picture.list')->with($response);
+    }
+
+    /**
+     * Update resource in storage.
+     *
+     * @param  PictureRequest  $request
+     * @return Response
+     */
+    public function update(PictureRequest $request)
+    {
+        // sanitized and validated data
+        $request->validated();
+        // update
+        $response = PictureService::update($request);
+
+        // verifica se retornou erro
+        if (isset($response['error'])) {
+            return back()->withInput()->with($response);
+        }
+
+        return redirect()->route('picture.list')->with($response);
+    }
+
+    /**
+     * Delete a picture.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function delete($id)
+    {
+        // exclui a foto no servidor e no BD
+        $response = PictureService::delete($id);
+
+        // verifica se retornou erro
+        if (isset($response['error'])) {
+            return back()->withInput()->with($response);
+        }
+
+        return redirect()->route('picture.list')->with($response);
     }
 
     /**

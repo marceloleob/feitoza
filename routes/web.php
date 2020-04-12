@@ -53,21 +53,23 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('new-gallery', 'GalleryController@create')->name('gallery.new');
     Route::post('gallery', 'GalleryController@store')->name('gallery.store');
     Route::get('gallery/{id}', 'GalleryController@edit')->name('gallery.edit');
-    Route::get('gallery/toggle/{id?}', 'GalleryController@toggle')->name('gallery.toggle');
+    Route::get('gallery/toggle/{id}', 'GalleryController@toggle')->name('gallery.toggle');
     // Pictures
     Route::get('pictures', 'PictureController@index')->name('picture.list');
     Route::any('pictures', 'PictureController@index')->name('picture.search');
     Route::get('new-picture', 'PictureController@create')->name('picture.new');
-    Route::post('picture', 'PictureController@store')->name('picture.store');
-    Route::get('picture/{id?}', 'PictureController@edit')->name('picture.edit');
-    Route::get('picture/toggle/{id?}', 'PictureController@toggle')->name('picture.toggle');
+    Route::post('create-picture', 'PictureController@store')->name('picture.store');
+    Route::get('picture/{id}', 'PictureController@edit')->name('picture.edit');
+    Route::post('update-picture', 'PictureController@update')->name('picture.update');
+    Route::get('picture/toggle/{id}', 'PictureController@toggle')->name('picture.toggle');
+    Route::get('delete-picture/{id}', 'PictureController@delete')->name('picture.delete');
     // Reviews List
     Route::get('reviews', 'ReviewController@index')->name('review.list');
     Route::any('reviews', 'ReviewController@index')->name('review.search');
     Route::get('new-review', 'ReviewController@create')->name('review.new');
     Route::post('review', 'ReviewController@store')->name('review.store');
-    Route::get('review/{id?}', 'ReviewController@edit')->name('review.edit');
-    Route::get('review/toggle/{id?}', 'ReviewController@toggle')->name('review.toggle');
+    Route::get('review/{id}', 'ReviewController@edit')->name('review.edit');
+    Route::get('review/toggle/{id}', 'ReviewController@toggle')->name('review.toggle');
 });
 
 /**

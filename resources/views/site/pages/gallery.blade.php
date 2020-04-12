@@ -45,10 +45,10 @@
 									<div id="lightgallery" class="gallery-list row clearfix">
 										{{-- Picture Block --}}
 										@foreach ($pictures as $picture)
-										<div class="gallery-item mix {!! $picture->friendly !!} all col-lg-4 col-md-4 col-sm-6 col-xs-12" data-src="{!! url($picture->photo) !!}">
+										<div class="gallery-item mix {!! $picture->friendly !!} all col-lg-4 col-md-4 col-sm-6 col-xs-12" data-src="{!! url('storage/' . $picture->photo) !!}">
 											<div class="inner-box">
 												<a href="#">
-													<img src="{!! url($picture->photo) !!}" alt="" class="{!! strtolower($picture->position) !!}-picture" />
+													<img src="{!! url('storage/' . $picture->photo) !!}" alt="" class="{!! strtolower($picture->position) !!}-picture" />
 												</a>
 											</div>
 										</div>

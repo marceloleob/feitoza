@@ -66,7 +66,7 @@ CUSTOMS
     max-width: 250px;
     max-height: 250px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
 input[type="file"] {
