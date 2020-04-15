@@ -42,7 +42,7 @@
 			<div class="widgets-inner-container">
 				{{-- Cartoon Image --}}
 				<div class="cartoon-image">
-					<img src="{!! asset('images/background/mascot.png') !!}" alt="" width="200" />
+					<img src="{!! asset('images/background/mascot.png') !!}" alt="" />
 				</div>
 				<div class="row clearfix">
 					<div class="footer-column col-md-9 col-sm-5 col-xs-12">

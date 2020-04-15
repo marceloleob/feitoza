@@ -871,6 +871,10 @@ img {
 	z-index: 10;
 }
 
+.main-footer .widgets-section .widgets-inner-container .cartoon-image img {
+    height: 280px;
+}
+
 .main-footer .widgets-section .widgets-inner-container .footer-widget {
 	position: relative;
 	margin-bottom: 30px;
