@@ -14,6 +14,7 @@
 		<tr>
 			<td>
 				<p>Hi {!! $firstname !!}, we received your email.</p>
+				<p>Thank you for sending us your message!</p>
 				<p>We will contact you soon.</p>
 			</td>
 		</tr>

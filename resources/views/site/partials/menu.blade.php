@@ -17,7 +17,7 @@
 		<li class="menu-item {!! ($current == 'gallery') ? 'current' : '' !!}">
 			<a href="{!! route('gallery') !!}" title="Image Gallery">Image Gallery</a>
 		</li>
-		<li class="menu-item {!! ($current == 'reviews') ? 'current' : '' !!}">
+		<li class="menu-item {!! ($current == 'review') ? 'current' : '' !!}">
 			<a href="{!! route('review') !!}" title="Reviews">Reviews</a>
 		</li>
 		<li class="menu-item {!! ($current == 'about') ? 'current' : '' !!}">

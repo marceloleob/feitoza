@@ -5,6 +5,15 @@
 @section('css-custom')
 {!! Html::style('css/site/pages/contact.css') !!}
 @stop
+@section('js-custom')
+{!! Html::script('https://www.google.com/recaptcha/api.js?render=' . config('constants.CAPTCHA_WEBSITE_KEY')) !!}
+{!! Html::script('js/forms/jquery.validate.min.js', ['defer' => 'defer']) !!}
+{!! Html::script('js/forms/jquery.validate.' . $locale . '.js', ['defer' => 'defer']) !!}
+{!! Html::script('js/forms/jquery.maskedinput.min.js', ['defer' => 'defer']) !!}
+{!! Html::script('js/forms/validations.js', ['defer' => 'defer']) !!}
+{!! Html::script('js/forms/masks.' . $locale . '.js', ['defer' => 'defer']) !!}
+{!! Html::script('js/site/recaptcha-v3.js', ['defer' => 'defer']) !!}
+@stop
 
 @section('content')
 
@@ -67,7 +76,7 @@
 													</div>
 												</div>
 												<div class="screen-reader-response"></div>
-												{!! Form::open(['id' => 'contact-form', 'route' => 'send', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
+												{!! Form::open(['id' => 'form-contact', 'route' => 'send', 'method' => 'POST', 'role' => 'form', 'class' => 'form']) !!}
 													<div class="row clearfix">
 														<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 															<span class="form-control-wrap">
@@ -104,8 +113,10 @@
 																{!! Form::textarea('text', '', ['class' => 'form-control textarea', 'placeholder' => 'Message']) !!}
 																{!! Form::notification('text', $errors) !!}
 															</span>
-														</div>
+                                                        </div>
 														<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                                            {!! Form::hidden('site_key', config('constants.CAPTCHA_WEBSITE_KEY'), ['id' => 'site_key']) !!}
+										                    {!! Form::hidden('recaptcha', '', ['id' => 'recaptcha']) !!}
 															{!! Form::button('<i class="far fa-paper-plane"></i> Send', ['type' => 'submit', 'class' => 'theme-btn btn-style']) !!}
 														</div>
 													</div>

@@ -38,7 +38,9 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('about-us', 'AboutController@index')->name('about');
     // Contact Us
     Route::get('contact-us', 'ContactController@index')->name('contact');
-    Route::post('send', 'ContactController@index')->name('send');
+    Route::post('send', 'ContactController@send')->name('send');
+	Route::get('email-company', 'ContactController@testCompany');
+	Route::get('email-customer', 'ContactController@testCustomer');
 });
 
 /**

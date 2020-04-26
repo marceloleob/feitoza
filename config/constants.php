@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
+
 return [
 
     // DEVELOPER INFORMATION
@@ -7,10 +9,10 @@ return [
     'DEVELOPER_EMAIL'        => 'marceloleob@gmail.com',
 
     // COMPANY INFORMATION
-    'COMPANY_NAME'           => 'Feitoza Wallpaper Decor',
-    'COMPANY_EMAIL'          => 'contact@feitozawallpaper.com',
+    'COMPANY_NAME'           => Config::get('app.name'),
+    'COMPANY_EMAIL'          => 'marceloleodev@gmail.com', //'contact@feitozawallpaper.com',
     'COMPANY_SUBJECT_TO'     => 'You have received a contact`s site - ' . date('m/d/Y'),
-    'COMPANY_SUBJECT_FROM'   => 'Feitoza Wallpaper Decor',
+    'COMPANY_SUBJECT_FROM'   => Config::get('app.name'),
 
     // PAGINATION
     'TOTAL_PAGE'             => 10,
@@ -25,6 +27,11 @@ return [
     'PICTURES_PATH_MSG'      => '3 MB',
     'PICTURES_LIMIT'         => 30,
     'PICTURES_NOTAVAILABLE'  => 'images/no-available-370x278.png',
+
+    // GOOGLE CONFIGS
+    'GOOGLE_ANALYTICS_ID'    => 'UA-161429430-1',
+    'CAPTCHA_SECRET_KEY'     => '6LcwgOsUAAAAAGSwWBHWiDmlZrlniWC-L5mj9_kO',
+    'CAPTCHA_WEBSITE_KEY'    => '6LcwgOsUAAAAAMGiMxq7tKwwydNvR8A2xRdEGrCi',
 
 ];
 

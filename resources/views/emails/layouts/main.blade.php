@@ -122,8 +122,8 @@
 						&reg; {!! Config::get('app.name') !!}, {!! date('Y') !!}
 					</td>
 					<td class="facebook">
-						<a href="https://www.facebook.com/bestwayimprovements/" title="Facebook" target="_blank">
-							<img src="{!! asset('images/icons/fb-24.png') !!}" />
+						<a href="https://www.facebook.com/feitoza.wallpaper" title="Facebook" target="_blank">
+							<img src="{!! asset('images/email/fb-24.png') !!}" />
 						</a>
 					</td>
 				</tr>

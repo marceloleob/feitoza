@@ -3,9 +3,9 @@
 namespace App\Http\Requests\Site;
 
 use App\Filters\Phone;
-use App\Http\Requests\BaseFormRequest;
+use App\Http\Requests\BaseRequest;
 
-class ContactRequest extends BaseFormRequest
+class ContactRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,12 +29,13 @@ class ContactRequest extends BaseFormRequest
      * @var array
      */
     public static $filters = [
-        'name'    => 'trim|capitalize|escape',
-        'email'   => 'trim|lowercase',
-        'phone'   => 'digit|phone',
-        'subject' => 'trim',
-        'text'    => 'trim',
-        'read'    => 'cast:boolean',
+        'firstname' => 'trim|capitalize|escape',
+        'lastname' => 'trim|capitalize|escape',
+        'email'    => 'trim|lowercase',
+        'phone'    => 'digit|phone',
+        'subject'  => 'trim',
+        'text'     => 'trim',
+        'read'     => 'cast:boolean',
     ];
 
     /**
@@ -43,11 +44,12 @@ class ContactRequest extends BaseFormRequest
      * @var array
      */
     public static $validations = [
-        'name'    => 'required|min:2|max:100',
-        'email'   => 'required|min:3|max:100|email',
-        'phone'   => 'required',
-        'subject' => 'required|min:2|max:100',
-        'text'    => 'required|min:5|max:2000',
-        'read'    => 'boolean',
+        'firstname' => 'required|min:2|max:100',
+        'lastname' => 'required|min:2|max:100',
+        'email'    => 'required|min:3|max:100|email',
+        'phone'    => 'required',
+        'subject'  => 'required|min:2|max:100',
+        'text'     => 'required|min:5|max:2000',
+        'read'     => 'boolean',
     ];
 }
