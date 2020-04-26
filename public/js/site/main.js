@@ -160,13 +160,14 @@ $(document).ready(function ()
 	 * LightBox / Fancybox
 	 */
 	if ($('#lightgallery').length) {
-
-	    $("#lightgallery").lightGallery({
-	        thumbnail: true,
-	        animateThumb: true,
-            showThumbByDefault: false,
-            download: false,
-	    });
+        $(window).on('scroll', function () {
+            $("#lightgallery").lightGallery({
+                thumbnail: true,
+                animateThumb: true,
+                showThumbByDefault: false,
+                download: false,
+            });
+        });
     }
 
 	/**

@@ -33,8 +33,8 @@
 }
 
 .contact-info-section .phone-email {
-    width: 100%;
-    margin: 0px;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .contact-info-section .info-block {
