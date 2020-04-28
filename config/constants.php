@@ -10,7 +10,7 @@ return [
 
     // COMPANY INFORMATION
     'COMPANY_NAME'           => Config::get('app.name'),
-    'COMPANY_EMAIL'          => 'marceloleodev@gmail.com', //'contact@feitozawallpaper.com',
+    'COMPANY_EMAIL'          => 'contact@feitozawallpaper.com',
     'COMPANY_SUBJECT_TO'     => 'You have received a contact`s site - ' . date('m/d/Y'),
     'COMPANY_SUBJECT_FROM'   => Config::get('app.name'),
 
