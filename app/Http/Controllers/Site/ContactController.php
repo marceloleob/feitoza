@@ -55,14 +55,15 @@ class ContactController extends Controller
 	public function testCompany()
 	{
 		$params = [
-			'name'    => 'Marcelo Leopold',
-			'email'   => 'marceloleob@gmail.com',
-			'phone'   => '(727) 238-4933',
-			'subject' => 'Este é o título',
-			'text'    => 'Mensagem teste!!!',
+			'firstname' => 'Marcelo',
+			'lastname' => 'Leopold',
+			'email'    => 'marceloleob@gmail.com',
+			'phone'    => '(727) 238-4933',
+			'subject'  => 'Este é o título',
+			'text'     => 'Mensagem teste!!!',
 		];
 
-		return view('emails.pages.tobusiness')->with($params);
+		return view('emails.pages.contact.tobusiness')->with($params);
 	}
 
 	/**
@@ -73,9 +74,9 @@ class ContactController extends Controller
 	public function testCustomer()
 	{
 		$params = [
-			'name' => 'Marcelo Leopold',
+			'firstname' => 'Marcelo Leopold',
 		];
 
-		return view('emails.pages.tocustomer')->with($params);
+		return view('emails.pages.contact.tocustomer')->with($params);
 	}
 }

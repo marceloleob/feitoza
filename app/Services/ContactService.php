@@ -5,11 +5,9 @@ namespace App\Services;
 use App\Services\BaseService;
 use Illuminate\Support\Facades\Mail;
 use Exception;
-use Illuminate\Support\Facades\Config;
 
 class ContactService extends BaseService
 {
-
 	/**
 	 * Send emails (company and customer) from Contact Page
 	 *
@@ -25,7 +23,7 @@ class ContactService extends BaseService
 			Mail::send('emails.pages.contact.tobusiness', $data, function ($message) {
 				// seta os paramentros no email
 				$message
-					->to(config('constants.COMPANY_EMAIL'), Config::get('app.name'))
+					->to(config('constants.COMPANY_EMAIL'), config('constants.COMPANY_NAME'))
 					->subject(trans('pages/contact.email.company.subject'));
 			});
 

@@ -13,7 +13,7 @@ img {
 }
 
 img.logo {
-	margin-top: 20px;
+	margin-left: 25px;
 }
 
 body {
@@ -46,7 +46,7 @@ BODY & CONTAINER
 ------------------------------------- */
 
 .bgcolor {
-	background-color: #353c7b;
+	background-color: #13149d;
 }
 
 .body {
@@ -100,7 +100,7 @@ HEADER, FOOTER, MAIN
 	padding: 30px;
 }
 .pre-footer .facebook {
-	text-align: center;
+	text-align: right;
 }
 .footer {
 	clear: both;
