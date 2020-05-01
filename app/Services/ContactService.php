@@ -41,7 +41,6 @@ class ContactService extends BaseService
 			];
 
 		} catch (Exception $exception) {
-            dd($exception);
 			// retorna a entidade criada ou atualizada
 			return [
 				'type'    => 'error',
