@@ -111,14 +111,13 @@ class PictureService extends BaseService
 		$query = Picture::join('galleries', 'pictures.gallery_id', '=', 'galleries.id')
 			->select('pictures.photo', 'pictures.position', 'galleries.name', 'galleries.friendly')
 			->where('pictures.status', config('constants.ACTIVE'))
-			->inRandomOrder()
-			->get();
+			->inRandomOrder();
 
 		if (!empty($limit)) {
 			$query->take($limit);
 		}
 
-		return $query;
+		return $query->get();
     }
 
 	/**
